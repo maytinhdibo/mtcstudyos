@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+	<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="css/animate.css">
+<script src="js/jquery.js"></script>
+	<title>Hoa hoc app</title>
+  </head>
+   <body onresize="theme()">
+	<header>
+<img onclick="oplist()" id="listbtn" src="../mtcbase/img/list.png">
+<center class="appname"> Công thức hóa học nhanh</center>
+</header>
+<div id="list">
+<span onclick="load('tilemol')" class="list" id="l1">Tính tỉ lệ chất trong hỗn hợp</span>
+<span onclick="load('doph')" class="list" id="l2"> &nbsp;Tính độ pH/pOH</span>
+<span onclick="load('dienliyeu')" class="list" id="l3"> &nbsp;Tính độ pH/pOH chất điện li yếu</span>
+<span onclick="load('no3')" class="list" id="l4"> &nbsp;Tính lượng HNO<sub>3</sub> hòa tan k.loại</span>
+</div>
+<div id="frame">
+<center style="font-size:29px">Chào mừng</center>
+&nbsp;Tính toán nhanh các số liệu của bài toán hóa học. Hãy chọn mục mà 
+bạn cần tính trên bên thanh tùy chọn bên trái.
+<br>
+&nbsp;Tác giả: Trần Mạnh Cường<br>
+&nbsp; Địa chỉ: K29A1, trường THPT Anh Sơn 2<br>
+&nbsp;Email: iammaytinhdibo@gmail.com<br>
+&nbsp;Facebook: fb.com/mtcsuite
+</div>
+<div id="kq">
+<div style="padding:6px;">
+<span onclick="clokq()" class="clokqbtn">X</span>
+<h2>Kết quả:</h2>
+<div id="kqdisplay">
+</div>
+</div></div>
+<script src="js/index.js"></script>	
+  </body>
+  </html>
+

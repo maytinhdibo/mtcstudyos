@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport"/>
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" href="css/animate.min.css">
+<link rel="stylesheet" type="text/css" href="app base/mtcbase/css/index.css" />
+	<title>Hello World</title>
+  </head>
+  <body><center>
+	  <header  style="position:static;" id="header" style="color:#1a1a1a;">
+	<span>
+<h1 style="text-align:left;" class="wow lightSpeedIn" style="padding:5px;"><img src="img/back.png" height="50px" width="50px" onclick="history.go(-1)"/>
+			tài khoản</h1>
+</span>
+	<div id="form">		<input id="name" value="Tên của bạn" type="text"/>
+		<h3> mật khẩu</h3>
+	  <input style="width:80%;" value="matkhau" id="uppass" type="password"/>
+		<img id="opkey" style="background:#612191" onclick="return openkey('uppass')" src="img/keyboard.png"/>
+	  <img id="see" style="background:#612191" onclick="return seepass('uppass')" src="img/see.png"/>
+	  <input style="width:80%;" value="matkhau" id="uppass2" type="password"/>
+	  <img id="opkey2" style="background:#612191" onclick="return openkey('uppass2')" src="img/keyboard.png"/>
+	  <img id="see2" style="background:#612191" onclick="return seepass('uppass2')" src="img/see.png"/>
+	  <span style="display:none;" id="login"></span>
+<h3>Vị trí</h3>
+<select onchange="localStorage.vitri=this.value">
+<option value="">-Hãy chọn vị trí của bạn-</option>
+<option value="hanoi">Hà Nội</option>
+<option value="nghean">Nghệ An</option>
+<option value="saigon">Tp. Hồ Chí Minh</option>
+</select>
+		<h3>chọn theme</h3>
+	  <div id="theme">
+		<button onclick="return theme('#CE4D1D','#852300','rgba(85,23,00,0.9)')" style="background:#CE4D1D"></button>
+		<button onclick="return theme('#5F0054','#55204D','rgba(91,28,98,0.9)')" style="background:#5F0054"></button>
+		<button onclick="return theme('#321297','#0D1C4B','rgba(46, 19, 219, 0.9)')"style="background:#321297"></button>		
+		<button onclick="return theme('#EFC52A','#9A8716',' rgba(255, 255, 89, 0.9)')"style="background:#EFC52A"></button>	
+		<button onclick="return theme('#F60000','#720D01',' rgba(255, 47, 50, 0.9)')"style="background:#F60000"></button>	
+		<button onclick="return theme('#765FBC','#0C2166',' rgba(133, 105, 255, 0.9)')"style="background:#765FBC"></button>		
+		<button onclick="return theme('#0ED310','#DD1A9F','rgba(70, 248, 85, 0.9)')"style="background:#0ED310"></button>
+<button onclick="return theme('#F95CC1','#137003','rgba(249, 92, 193, 0.9)')"style="background:#F95CC1"></button>		
+	  </div>
+	  <button onclick="return signup()" id="save">Lưu thông tin</button>
+	  </div>
+		<div class="key" id="keyboard"><center>
+	  <br>
+	  <button style="margin-left:-7px;" onclick="return key(this.innerText)">1</button>
+	  <button onclick="return key(this.innerText)">2</button>
+	  <button onclick="return key(this.innerText)">3</button>
+	  <button onclick="return key(this.innerText)">4</button>
+	  <button onclick="return key(this.innerText)">5</button>
+	  <button onclick="return key(this.innerText)">6</button>
+	  <button onclick="return key(this.innerText)">7</button>
+	  <button onclick="return key(this.innerText)">8</button>
+	  <button onclick="return key(this.innerText)">9</button>
+	  <button onclick="return key(this.innerText)">0</button><br>
+	  <button onclick="return key(this.innerText)">q</button>
+	  <button onclick="return key(this.innerText)">w</button>
+	  <button onclick="return key(this.innerText)">e</button>
+	  <button onclick="return key(this.innerText)">r</button>
+	  <button onclick="return key(this.innerText)">t</button>
+	  <button onclick="return key(this.innerText)">y</button>
+	  <button onclick="return key(this.innerText)">u</button>
+	  <button onclick="return key(this.innerText)">i</button>
+	  <button onclick="return key(this.innerText)">o</button>
+	  <button onclick="return key(this.innerText)">p</button>
+	  <br>
+	  <button onclick="return key(this.innerText)">a</button>
+	  <button onclick="return key(this.innerText)">s</button>
+	  <button onclick="return key(this.innerText)">d</button>
+	  <button onclick="return key(this.innerText)">f</button>
+	  <button onclick="return key(this.innerText)">g</button>
+	  <button onclick="return key(this.innerText)">h</button>
+	  <button onclick="return key(this.innerText)">j</button>
+	  <button onclick="return key(this.innerText)">k</button>
+	  <button onclick="return key(this.innerText)">l</button>
+	  <button onclick="return delkey()">Del</button>
+<br>	  <button onclick="return key(this.innerText)">z</button>
+	  <button onclick="return key(this.innerText)">x</button>
+	  <button onclick="return key(this.innerText)">c</button>
+	  <button onclick="return key(this.innerText)">v</button>
+	  <button onclick="return key(this.innerText)">b</button>
+	  <button onclick="return key(this.innerText)">n</button>
+	  <button onclick="return key(this.innerText)">m</button>
+	  </center>
+		</div>
+	  <style>
+#theme button{
+border-radius:100%;
+}
+	  #form input[type="password"]{
+	  width:80%;
+	  }
+	 img{
+	  width:8%;
+	  margin:-1px;
+	  }
+	  h1 img{
+	  width:50px;
+	  height:50px;
+	  }
+	  select{
+	 border-radius: 10px 0;
+	 padding:3px;
+	  }
+	  </style>		  
+	  </header>
+	</center>
+<script src="js/wow.min.js"></script>
+	<script src="js/vio.js"></script>
+	<script src="app base/mtcbase/js/index.js"></script>
+	 <script src="js/index.js"></script>
+  <script>
+        new WOW().init();
+         </script>
+  </body>
+  </html>

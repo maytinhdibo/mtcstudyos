@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport"/>
+	<link rel="stylesheet" href="css/animate.min.css">
+	<title>Hello World</title>
+  </head>
+  <body onload="return appsize()">
+	<header>
+	  <span>Chào mừng</span>
+	  <button id="btn" onclick="return next()">Tiếp theo</button>  </header>
+	  <center>
+  <div id="content">
+	<div id="a" data-wow-offset="10" class="wow rubberBand">
+   <img src="img/1.png">
+   <p>Lưu giữ mật khẩu dễ dàng cho bạn. An toàn hơn với Vio</p>
+</div>
+</div>
+	  </center>
+<script>
+sessionStorage.next=1;
+function next(){
+appsize();
+a[2]='<div id="a" class="wow rotateInDownLeft">   <img src="img/2.png">   <p>Giữ an toàn thông tin bằng thông báo. Thật an toàn!!</p></div>';
+sessionStorage.next=sessionStorage.next-(-1);
+if(sessionStorage.next==2){
+document.getElementById('btn').innerHTML="Hoàn tất";
+}
+if(sessionStorage.next==3){
+location.href='ac.html';
+}
+document.getElementById('content').innerHTML=a[sessionStorage.next];
+}
+</script>
+
+<style>
+*{
+margin:0;
+font-family:arial;
+font-weight:100;
+padding:0;
+}
+header{
+color:#BBBBBB;
+font-size:22px;
+height:50px;
+background:#423D3C;
+box-shadow:2px 1px 2px #9A9A9A;
+font-weight:100;
+}
+header #logo{
+position:absolute;
+height:40px;
+left:4px;
+}
+header span{
+position:absolute;
+top:12px;
+left:44px;
+}
+#content{
+height:100%;
+}
+#content div{
+margin-top:10%;
+width:60%;
+font-size:24px;
+}
+header button{
+border:none;
+float:right;
+padding:4px;
+height:98%;
+}
+</style>
+  <script src="js/wow.min.js"></script>
+<script>
+ new WOW().init();
+</script>
+	<script src="js/view.js">appsize();</script>	
+  </body>
+  </html>

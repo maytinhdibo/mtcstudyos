@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/animate.css">
+  <title>Quá trình cài đặt</title>
+</head>
+<body>
+<center>
+<div id="install">
+Đang cài đặt...
+</div>
+<div id="done">
+Quá trình cài đặt đã hoàn thành.
+<br><a href="index.html">
+<button>Bắt đầu</button>
+</a>
+</div>
+</center>
+<iframe style="display:none;" src="appnew.html"></iframe>
+<style>
+*{
+padding:0;
+margin:0;
+font-family:arial;
+font-weight:100;
+}
+body{
+background:#B55216;
+transition:8s;
+}
+#install{
+ -vendor-animation-duration: 6s;
+  -vendor-animation-delay: 2s;
+  -vendor-animation-iteration-count: infinite;
+
+ position:fixed;
+padding:40px;
+height:200px;
+transition:8s;
+width:200px;
+border-radius:50%;
+background:#224333;
+font-size:23px;
+text-align: center;
+line-height: 193px;   
+text-shadow:1px 2px 2px #222;
+color:#fbfbfb;
+box-shadow:1px 3px 2px #555;
+top:50%;
+left:50%;
+transform: translate(-50%, -50%);
+}
+#done{
+color:#fbfbfb;
+font-size:22px;
+padding:6px;
+top:50%;
+left:50%;
+ position:fixed;
+ transform: translate(-50%, -50%);
+ display:none;
+}
+button{
+border:none;
+padding:6px;
+font-size:22px;
+}
+</style>
+<script>
+localStorage.anhdaidien='img/ac.png';
+localStorage.hinhnen='img/bg.png';
+localStorage.chiacuasotrue='false';
+localStorage.animatedzoomOutDown='null';
+localStorage.hissearch='';
+localStorage.Minstall='ok';
+localStorage.volume=65;
+localStorage.sysnof='';
+localStorage.sub='block';
+setTimeout(function(){
+document.body.style.background="#224333";
+document.getElementById('install').style.background="#B55216";
+},1000);
+setTimeout(function(){
+document.getElementById('install').className="animated fadeOutUp";
+document.getElementById('done').style.display="block";
+},9000);
+
+</script>
+</body>
+</html>

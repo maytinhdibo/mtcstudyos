@@ -1,0 +1,30 @@
+<div class="input">
+    <div id='label'>Họ và tên:</div>
+    <input type="text" name="ten" id="ten" placeholder="Họ và tên của bạn">
+</div>
+<div class="input">
+    <div id='label'>Địa chỉ Email:</div>
+    <input type="text" name="email" id="email" placeholder="Dạng: Tenemail@tenmien.com">
+</div>
+<div class="input">
+	<div id='label'>Vị trí:</div>
+	<select id="vitri">
+		<option>-Lựa chọn vị trí của bạn-</option>
+		<option value="hanoi">Hà Nội</option>
+		<option value="nghean">Nghệ An</option>
+		<option value="saigon">Tp. Hồ Chí Minh</option>
+	</select>
+</div>
+<button onclick="save()">Lưu thông tin</button>
+<script>
+	$("#ten").val(localStorage.acname);
+	$("#email").val(localStorage.acmail);
+	$("#vitri").val(localStorage.vitri);
+	function save(){
+		localStorage.acname=$("#ten").val();
+		localStorage.acmail=$("#email").val();
+		localStorage.vitri=$("#vitri").val();
+		toastShow('Xong');
+	}
+</script>
+<script src="../app base/mtcbase/js/index.js"></script>

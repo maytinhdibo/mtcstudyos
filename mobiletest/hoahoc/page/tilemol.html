@@ -1,0 +1,29 @@
+<div id="page">
+<table>
+<tr>
+<th><label>Khối lượng mol chất thứ nhất [g/mol]:</label></th>
+<th><input id="val1" placeholder="VD: 28" type="number"/></th>
+</tr><tr>
+<th><label>Khối lượng mol chất thứ hai [g/mol]:</label></th>
+<th><input id="val2" placeholder="VD: 44" type="number"/></th>
+</tr><tr>
+<th><label>Tỉ khối so với:</label></th>
+<th>
+<select id="valx">
+<option value=1>Không sử dụng</option>
+<option value=2>Hidro</option>
+<option value=4>Heli</option>
+<option value=30>NO(Nitơ oxit)</option>
+<option value=36>NO2(Nitơ đioxit)</option>
+</select></th>
+</tr><tr>
+<th><label>Khối lượng mol trung bình (hoặc tỉ khối) [g/mol]:</label></th>
+<th><input id="val3" placeholder="VD: 34.4" type="number"/></th>
+</tr><tr>
+<th><label>Lượng chất ban đầu [mol hoặc lít]:</label></th>
+<th><input id="vals" placeholder="Phần này có thể có hoặc không" type="number"/></th>
+</tr><tr>
+<th><button onclick="tiloemol()">Tính toán</button></th>
+</tr>
+</table>
+</div>

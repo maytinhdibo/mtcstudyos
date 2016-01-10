@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" type="text/css" href="../css/index.css" />
+        <title>Hello World</title>
+    </head>
+    <body>
+		<style>
+			.number{
+ width:10%
+	}
+ .gia{
+ width:80%
+ }
+ input{
+ margin-top:2px;
+ }
+	</style>
+		<marquee behavior="slide" scrollamount="150" >
+	<h1>	<img src="../img/back.png" height="50px" onclick="history.go(-1)"/>
+				Spending/ Shopping </h1></marquee>
+				<br><h3><br><center>
+		<div>			<b>Select items:</b>		
+	<select id="soluong_vi" onchange="return soluong_vi()">
+		<option>0</option>
+	<option value="1"> 1</option>
+		<option value="2"> 2</option>
+		<option value="3"> 3</option>	
+		<option value="4"> 4</option>
+	</select> </div>
+						<i style="float:left;" >Number of</i>
+						<i style="margin-left:25%">Price </i>
+				<!--1-->
+				<div id="hoadon0" style="display:none;">
+				<input type="number" class="number" id="number0"/>
+<input type="number" class="gia" id="gia0" />
+				</div>
+				<!--2-->
+	<div id="hoadon1" style="display:none;">
+						<input type="number" class="number" id="number1"/>
+						<input type="number" class="gia" id="gia1" />
+					</div>
+
+					<!--3-->
+					<div id="hoadon2" style="display:none;">
+						<input type="number" class="number" id="number2"/>
+						<input type="number" class="gia" id="gia2" />
+					</div>
+
+					<!--4-->
+					<div id="hoadon3" style="display:none;">
+						<input type="number" class="number" id="number3"/>
+						<input type="number" class="gia" id="gia3" />
+					</div><br>
+					<button onclick="return mua_vi()">Tổng kết hóa đơn</button>
+						<div id="shop_done_en"> </div>
+						<div style="display:none;" id="shop_done_vi"> </div>		
+				</center>
+				</h3>
+	<div id="alertlow" style="display:none">
+		Your account is not enough to buy / spend. Please remove some items 
+or create a savings plan. This software/app will help you.
+	</div>
+	   <script type="text/javascript" src="../js/index.js"></script>
+    </body>
+</html>

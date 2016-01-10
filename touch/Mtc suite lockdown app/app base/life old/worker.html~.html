@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+         <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/read.css" />
+<link rel="stylesheet" href="../mtcbase/css/index.css">
+		<title>Hello World</title>
+    </head>
+	<body onbeforeonload="document.getElementById('mtc_boot_loader').style.display='block';" onload="return load_end()" background="bg/bg.jpg"> 
+		<div id="mtc_boot_loader">
+			<div>
+				<h2>Mtc suite</h2>
+				Precursor of Mtc suite app book project
+				Base developed by Tran Manh Cuong
+				<br>Loading...
+			</div>	</div>
+     <header>
+	<img id="logo" src="img/logo.png"/>
+		 <span>	The day of life</span>
+		 <img onclick="return openmenu()" id="menu" src="img/menu.png"/>
+	 </header>
+	 <div class="popup" id="upimage"> 
+	 <button style="float:right" onclick="document.getElementById('upimage').style.opacity='0';setTimeout(function(c1){document.getElementById('upimage').style.display='none'},500);">X</button>
+	 <h3 id="title-upimage">Xem trước tải ảnh lên</h3>
+	
+	 	<center>
+		<input onchange="return chooseimage()" type="file" id="inputimage">
+		<button id="doneimage" onclick="return imagesave()" style="opacity:0.5" disabled>Xong</button>
+		<div id="imagePreview"></div>
+		</center>
+	 </div>
+	 <div id="bgpopup">
+	 </div>
+	 
+	 </div>
+		<div id="menupopup">
+			<button>Mở</button>
+			<button>Tạo bản sao lưu</button>
+			</div>
+			<center>
+     <div id="worker">
+		 <bg-blue>	 <div>Mùa thu đến</div></bg-blue>
+	 </div></center>
+	 <div id="tool">	 
+		 <center><img src="img/icon.png"/>
+		 <img id="imagetool" onclick="document.getElementById('upimage').style.opacity='1';document.getElementById('upimage').style.display='block'" src="img/imageicon.png"/>
+	 </center>
+	 </div>
+	 <div id="edit">
+		 <input value=" " id="input" type="text"/>
+		 <button onclick="return post()">⏩  </button>
+	 </div>
+        <script type="text/javascript" src="js/index.js"></script>
+<script src="../mtcbase/js/index.js"></script>
+		<script type="text/javascript" src="js/style.js"></script>
+	</body>
+</html>

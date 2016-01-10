@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>DevBridge Autocomplete Demo</title>
+    <link href="css/store.css" rel="stylesheet" />
+	<link href="css/index.css" rel="stylesheet" />
+	  <link href='font/index.css' rel='stylesheet' type='text/css'>
+	   <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+</head>
+<body background="#fbfbfb">
+   <header>
+<span onclick="document.getElementById('mainpage').style.top='0%';document.getElementById('autocomplete-ajax').value=''" style="cursor:pointer;font-size:25px;position:fixed;top:6px;left:4px;">Cửa hàng ứng dụng</span>
+            <input onkeypress="keyup()" type="text" name="country" id="autocomplete-ajax" style=""/>
+            <input  type="text" name="country" id="autocomplete-ajax-x"  style="color: #CCC; position: absolute; background: transparent; z-index: 1;display:none;"/>
+      </header>
+	  <div id="mainpage">
+	  <iframe src="storemain/index.html"></iframe>
+	  </div>
+	  <div id="main">
+	  <div id="cover">
+	  </div>
+	<img class="appicon">
+	<span class="installbtn">
+	<button onclick="installapp()" id="install" class="install">Cài đặt</button>
+	<button onclick="uninstall()" id="uninstall" class="uninstall">Gỡ cài đặt</button>
+	</span>
+	<div class="content">
+	<span class="appname"></span>
+	<div class="maintext">
+
+</div>
+	</div>
+	  </div>
+		<script>	
+		function installapp(script){
+		if(localStorage.getItem(sessionStorage.appID)=="appinstall"){
+		alert('Có xảy ra xung đột app ID với app cũ khi cài đặt');
+		return;
+		}
+		localStorage.addApp=localStorage.addApp+sessionStorage.scriptInstall;
+				document.getElementById('install').style.display="none";
+		document.getElementById('uninstall').style.display="block";
+		localStorage.setItem(sessionStorage.appID,"appinstall");
+		top.addnof('img/storemini.png','Đã cài đặt thành công '+sessionStorage.appName);
+		top.document.getElementById('applauncher').innerHTML=localStorage.addApp;
+		top.document.getElementById('applauncher').style.height=top.document.getElementById('applauncher').scrollHeight;
+		top.document.getElementById('morongapp').style.transform="rotate(90deg)";
+a=top.document.body.clientHeight-(top.document.getElementById('applauncher').scrollHeight+86);
+if(a<=0){
+a=0;
+top.document.getElementById('widget').style.top=top.document.body.clientHeight+'px';
+}else{
+a=top.document.getElementById('applauncher').scrollHeight+79;
+top.document.getElementById('widget').style.top=a+'px';
+}
+		}
+	function loadapp(){
+		if(localStorage.getItem(sessionStorage.appID)=="appinstall"){
+		document.getElementById('install').style.display="none";
+		document.getElementById('uninstall').style.display="block";
+		}else{
+		document.getElementById('install').style.display="block";
+		document.getElementById('uninstall').style.display="none";
+		}
+		$('.appname').text(sessionStorage.appName);
+		$('.appicon').attr('src',sessionStorage.appIcon);
+		$('#cover').css("background-image","url('"+sessionStorage.appCover+"')");
+		$('.maintext').html(sessionStorage.appMaintext);
+		}
+		function uninstall(){
+		localStorage.setItem(sessionStorage.appID,"appuninstall");
+		top.document.getElementById(sessionStorage.appID).remove();
+		localStorage.addApp=top.document.getElementById('applauncher').innerHTML;
+		top.document.getElementById('applauncher').style.height=top.document.getElementById('applauncher').scrollHeight;
+		document.getElementById('install').style.display="block";
+		document.getElementById('uninstall').style.display="none";
+		}
+    function keyup(){
+	document.getElementsByClassName('autocomplete-suggestions')[0].addEventListener('click', function(){loadstore(document.getElementById('autocomplete-ajax').value)});
+	}
+	function loadstore(value){
+	document.getElementById('mainpage').style.top="-100%";
+ (function(){
+  var newscript = document.createElement('script');
+     newscript.type = 'text/javascript';
+     newscript.async = true;
+     newscript.src = "storeappscript/"+value+".js";
+  (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(newscript);
+})();
+}
+function aa(){
+alert('aaaadsvs');
+}
+</script> 
+ <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mockjax.js"></script>
+    <script type="text/javascript" src="js/jquery.autocomplete.js"></script>
+    <script type="text/javascript" src="js/countries.js"></script>
+    <script type="text/javascript" src="js/demo.js"></script>
+</body>
+</html>

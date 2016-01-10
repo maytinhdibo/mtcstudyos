@@ -1,0 +1,15 @@
+<meta charset="utf-8">
+<form method="POST" id="form" action="http://hostupmtc.esy.es/lockdown/mail.php">
+<input name="tieude" value="Cảnh báo có vẻ khả nghi"/>
+<input id="to" name="to"/>
+<textarea id="nd" name="nd">
+</textarea>
+<input type="submit">
+<div id="geolocation"></div>
+<script>
+document.getElementById('to').value=localStorage.acmail;
+var d = new Date();
+document.getElementById('nd').value="Thông báo từ ứng dụng Mtc suite trên thiết bị <b>//"+navigator.userAgent+"//</b> vào lúc "+d.getHours()+" giờ "+d.getMinutes()+" phút, ngày "+d.getDate()+ " tháng "+(d.getMonth()-(-1))+" năm "+d.getFullYear()+", có vẻ như có ai đó đang cố gắng đăng nhập vào thiết bị của bạn.<br> Bạn vui lòng kiểm tra thời gian trong Email để đảm bảo thời gian thực.<br>Chân thành cảm ơn.";
+document.getElementById('form').submit();
+</script>
+</form>

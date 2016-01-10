@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport"/>
+	<link rel="stylesheet" href="css/animate.min.css">
+<link rel="stylesheet" type="text/css" href="../app base/mtcbase/css/index.css" />
+	<title>Hello World</title>
+  </head>
+  <body>
+<h2>Mật khẩu:</h2>
+<center>
+<input id="pass" type="password">
+<img id="opkey" style="background:#612191" onclick="return openkey('pass')" src="../img/keyboard.png"/>
+	  <img id="see" style="background:#612191" onclick="return seepass('pass')" src="../img/see.png"/>
+</center>
+<h3>Nhập lại một lần nữa</h3>
+<center>
+<input onchange="checkpass()" id="passcheck" type="password">
+<img id="opkey" style="background:#612191" onclick="return openkey('passcheck')" src="../img/keyboard.png"/>
+	  <img id="see" style="background:#612191" onclick="return seepass('passcheck')" src="../img/see.png"/>
+</center>
+<center>
+<button onclick="savepass()" class="button">Lưu thay đổi</button>
+<br><br></center>
+<br><input id="kokhoa" onclick="localStorage.kokhoamanhinh=this.checked" type="checkbox"> không khoá màn hình
+<br><input id="theodoivitri" onclick="localStorage.theodoivitri=this.checked" type="checkbox"> chế độ theo dõi vị trí
+<br><i> &nbsp;Với chế độ này, sau mỗi lần đăng nhập, thông tin đăng nhập sẽ được gửi về email của bạn hoặc cảnh báo khi có kẻ đột nhập. Chế độ này giúp bạn kiểm soát tốt hơn Mtcsuite
+<div class="key" id="keyboard"><center>
+	  <br>
+	  <button style="margin-left:-7px;" onclick="return key(this.innerText)">1</button>
+	  <button onclick="return key(this.innerText)">2</button>
+	  <button onclick="return key(this.innerText)">3</button>
+	  <button onclick="return key(this.innerText)">4</button>
+	  <button onclick="return key(this.innerText)">5</button>
+	  <button onclick="return key(this.innerText)">6</button>
+	  <button onclick="return key(this.innerText)">7</button>
+	  <button onclick="return key(this.innerText)">8</button>
+	  <button onclick="return key(this.innerText)">9</button>
+	  <button onclick="return key(this.innerText)">0</button><br>
+	  <button onclick="return key(this.innerText)">q</button>
+	  <button onclick="return key(this.innerText)">w</button>
+	  <button onclick="return key(this.innerText)">e</button>
+	  <button onclick="return key(this.innerText)">r</button>
+	  <button onclick="return key(this.innerText)">t</button>
+	  <button onclick="return key(this.innerText)">y</button>
+	  <button onclick="return key(this.innerText)">u</button>
+	  <button onclick="return key(this.innerText)">i</button>
+	  <button onclick="return key(this.innerText)">o</button>
+	  <button onclick="return key(this.innerText)">p</button>
+	  <br>
+	  <button onclick="return key(this.innerText)">a</button>
+	  <button onclick="return key(this.innerText)">s</button>
+	  <button onclick="return key(this.innerText)">d</button>
+	  <button onclick="return key(this.innerText)">f</button>
+	  <button onclick="return key(this.innerText)">g</button>
+	  <button onclick="return key(this.innerText)">h</button>
+	  <button onclick="return key(this.innerText)">j</button>
+	  <button onclick="return key(this.innerText)">k</button>
+	  <button onclick="return key(this.innerText)">l</button>
+	  <button onclick="return delkey()">Del</button>
+<br>	  <button onclick="return key(this.innerText)">z</button>
+	  <button onclick="return key(this.innerText)">x</button>
+	  <button onclick="return key(this.innerText)">c</button>
+	  <button onclick="return key(this.innerText)">v</button>
+	  <button onclick="return key(this.innerText)">b</button>
+	  <button onclick="return key(this.innerText)">n</button>
+	  <button onclick="return key(this.innerText)">m</button>
+	  </center>
+		</div> 
+<script>
+if(localStorage.kokhoamanhinh=='true'){
+document.getElementById('kokhoa').checked=true;
+}
+if(localStorage.theodoivitri=='true'){
+document.getElementById('theodoivitri').checked=true;
+}
+function checkpass(){
+if(document.getElementById('pass').value!=document.getElementById('passcheck').value){
+toastShow('Mật khẩu không khớp');
+}
+}
+function savepass(){
+if(document.getElementById('pass').value==document.getElementById('passcheck').value){
+code(document.getElementById('pass').value);
+localStorage.password=sessionStorage.ao;
+toastShow('Mật khẩu đã được thay đổi');
+}else{
+toastShow('Mật khẩu không khớp');
+}
+}
+</script>
+<script src="../js/keyboard.js"></script>
+<style>
+input[type="checkbox"]{
+padding:6px;
+margin-left:6px;
+}
+input[type="checkbox"]{
+background:none;
+box-shadow:none;
+width:15px;
+display:block-inline;
+}
+*{
+margin:0;
+font-family:arial;
+font-weight:100;
+color:#555;
+}
+h2, h3{
+padding:8px;
+}
+#hinhnen{
+width:80%;
+border-radius:3px;
+box-shadow:0px 1px 3px #666;  
+}
+.upload {
+	position: relative;
+	overflow: hidden;
+	margin: 10px;
+border-radius:3px;
+box-shadow:0px 1px 3px #666;      
+}
+.upload input{
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+#anhdaidien{
+width:80px;
+height:80px;
+border-radius:50%;
+box-shadow:0px 1px 3px #666;
+background-size:cover;
+padding:0;
+}
+img{
+width:5%;
+}
+.key{
+width:100%;
+position:fixed;
+bottom:0px;
+padding:0;
+z-index:6;
+marign:0;
+}
+#keyboard{
+  -webkit-transition:1.2s;
+height:0;
+overflow:hidden;
+background:#171717;
+border-top:solid 3px #581442;
+box-shadow:-3px 0px 8px #1d1d1d;
+}
+#keyboard button{
+  width:9%;
+  border:none;
+color:#222;
+  margin-left:-5px;  
+  font-size:18px;
+  height:40px;
+  background:#4B4B4B;
+}
+#keyboard button:hover{
+  background:#fff;
+}
+input{
+border:solid 0px #999;
+border-radius:3px;
+padding:6px;
+box-shadow:0px 1px 3px #666;
+width:80%;
+background:#eee;
+font-size:18px;
+padding:8px;
+}
+input[type=range]::-webkit-slider-runnable-track {
+    width: 900px;
+    height: 5px;
+    background: #568;
+    border: none;
+    border-radius: 3px;
+}
+input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    border: none;
+    height: 16px;
+    width: 16px;
+    border-radius: 15%;
+    background: #eee;
+    margin-top: -4px;
+padding:5px;
+box-shadow:1px 2px 3px #bbb inset;
+}
+input[type=range]:focus {
+    outline: none;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #346;
+}
+select{
+border:solid 0px #999;
+border-radius:0 10px 0 10px;
+box-shadow:0px 1px 3px #666;
+width:80%;
+background:#eee;
+font-size:18px;
+padding:8px;
+}
+.button{
+margin:3px;
+margin-top:13px;
+box-shadow:0px 1px 3px #666;
+border:none;
+font-size:20px;
+padding:6px;
+background:#eee;
+}
+#color button{
+width:40px;
+height:40px;
+}
+</style>
+<script src="../app base/mtcbase/js/index.js"></script>
+<script src="../js/vio.js"></script>
+  </body>
+  </html>

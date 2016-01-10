@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Hello World</title>
+    </head>
+    <body>
+	<marquee behavior="slide" scrollamount="150" >
+	<h1>	<img src="img/back.png" height="50px" onclick="history.go(-1)"/>
+				E-mail</h1></marquee>
+				<br><center>
+<h3>	To:<input type="mail" id ="email" value="xyz@gmail.com" style="width:80%"/><br>
+	Subject:<br>
+	<textarea id="content" style="width:90%;height:65%">
+		Your content/Nội dung
+	</textarea>
+	<button onclick="return mail()">Send/Gửi</button>
+</h3>
+					Mẹo chọn vào ô nội dung rồi chạm giữ nút gửi để dán.
+					
+	<footer>
+			<h5>
+			 v1.0<br>
+			© Mtc,2014
+			</h5>
+		</footer>
+		</center>
+	<script>
+function mail(){
+location.href="https://mail.google.com/mail/ca/?view=cm&fs=1&tf=1&source=mailto&su=tittle&to="+document.getElementById('email').value+"&body="+document.getElementById('content').value;
+}
+</script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>

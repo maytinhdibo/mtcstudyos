@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+<link rel="stylesheet" type="text/css" href="app base/mtcbase/css/index.css" />
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <title>Hello World</title>
+    </head>
+    <body onload="return appsizecheck()"><center>
+    <script>
+		  	function checkapp(id){
+if(localStorage.getItem(id)==null){
+document.getElementById(id).style.display='none';;
+}  
+}
+			</script>
+		<header style="color:#1a1a1a;" id="header">
+		</header>
+		<div id="nof">
+		<div id="acheader">
+		<span id="acname">Tên của bạn</span>	
+		<span id="countnof">0</span>
+		<div id="anhdaidien" style="background:url('img/ac.png');background-size:cover;"></div>
+		</div>
+		<div id="nofquick">
+		  <button onclick="lock()">Khóa</button>
+		  <button onclick="removeallnof()">Đã xem t.báo</button>
+		</div>
+		<div id="nofdisplay">
+		</div>
+		<div onclick="closenof()" id="acbottom">
+		   —
+		</div>
+		</div>
+		<div onclick="closebvnof()" id="bv"></div>
+				<div id="logpage">
+		  <marquee behavior="slide" scrollamount="150" >
+			<h1 style="padding:5px;">		
+			lockdown app</h1></marquee>
+   <div id="form">
+	  <h3>	<span style="display:none;" id="save"></span><p>Nhập mật khẩu</p></h3>
+			<input id="pass" onclick="this.value=''" value="matkhau" type="password"/>
+				<input id="login" onclick="return login()" value="Đăng nhập" type="submit"/>
+
+<div id="bvcount">
+<div style="height:30%"></div>
+Bạn đã nhập sai quá 5 lần.<br>
+Vui lòng đợi thêm <span id="tgbv">30</span> giây.
+</div>
+				  <br><br><br>
+	 <span onclick="openbvnof()" id="lock_nof"> Bạn có thông báo mới</span>
+				  </div> 
+<div id="key" class="key">
+		 <span style="margin-left:80%"> <img id="opkey" style="height:32px;background:#612191" onclick="return openkey('pass')" src="img/keyboard.png"/>
+		  <img id="see" style="height:32px;background:#612191" onclick="return seepass('pass')" src="img/see.png"/>
+		 </span>
+	<div id="keyboard"><center>
+	  <br>
+		<button style="margin-left:-7px;" onmouseup="return key(this.innerText)">1</button>
+		<button onmouseup="return key(this.innerText)">2</button>
+	  <button onmouseup="return key(this.innerText)">3</button>
+	  <button onmouseup="return key(this.innerText)">4</button>
+	  <button onmouseup="return key(this.innerText)">5</button>
+	  <button onmouseup="return key(this.innerText)">6</button>
+	  <button onmouseup="return key(this.innerText)">7</button>
+	  <button onmouseup="return key(this.innerText)">8</button>
+	  <button onmouseup="return key(this.innerText)">9</button>
+	  <button onmouseup="return key(this.innerText)">0</button><br>
+	  <button onmouseup="return key(this.innerText)">q</button>
+	  <button onmouseup="return key(this.innerText)">w</button>
+	  <button onmouseup="return key(this.innerText)">e</button>
+	  <button onmouseup="return key(this.innerText)">r</button>
+	  <button onmouseup="return key(this.innerText)">t</button>
+	  <button onmouseup="return key(this.innerText)">y</button>
+	  <button onmouseup="return key(this.innerText)">u</button>
+	  <button onmouseup="return key(this.innerText)">i</button>
+	  <button onmouseup="return key(this.innerText)">o</button>
+	  <button onmouseup="return key(this.innerText)">p</button>
+	  <br>
+	  <button onmouseup="return key(this.innerText)">a</button>
+	  <button onmouseup="return key(this.innerText)">s</button>
+	  <button onmouseup="return key(this.innerText)">d</button>
+	  <button onmouseup="return key(this.innerText)">f</button>
+	  <button onmouseup="return key(this.innerText)">g</button>
+	  <button onmouseup="return key(this.innerText)">h</button>
+	  <button onmouseup="return key(this.innerText)">j</button>
+	  <button onmouseup="return key(this.innerText)">k</button>
+	  <button onmouseup="return key(this.innerText)">l</button>
+	  <button onmouseup="return delkey()">Del</button>
+<br>	  <button onmouseup="return key(this.innerText)">z</button>
+	  <button onmouseup="return key(this.innerText)">x</button>
+	  <button onmouseup="return key(this.innerText)">c</button>
+	  <button onmouseup="return key(this.innerText)">v</button>
+	  <button onmouseup="return key(this.innerText)">b</button>
+	  <button onmouseup="return key(this.innerText)">n</button>
+	  <button onmouseup="return key(this.innerText)">m</button>
+	  </center></div>
+		</div>
+	</div></center>
+	<div id="main"> 
+	<div id="headermain">
+	<span onclick="opennof()" id="opstt">></span>	
+	  <input type="search" onkeyup="return changesearch(this.value)" onclick="return changesearch(this.value)" id="search"/>
+	</div>
+		<div id="app">
+  <img onclick="location.href='set.html'" src="img/set.png">
+		  <img onclick="location.href='store.html'" src="img/store.png">
+		  <img onclick="location.href='app base/docky/index.html'" src="img/dogky.png">
+  <img onclick="location.href='app base/life/index.html'" src="img/life.png">
+ <img onclick="location.href='app base/note viewer/index.html'" src="img/noteviewer.png">
+<img onclick="location.href='app base/esearch/index.html'" src="img/esearch.png">
+		  <img id="fb" onload="return checkapp(this.id)" onclick="location.href='http://touch.facebook.com'" src="img/fb.png">
+		 <img id="thoitiet" onclick="golink('https://weather.yahoo.com/')" onload="return checkapp(this.id)" src="img/thoitiet.png">
+<img id="save2g" onclick="opminiapp()" src="img/save2g.png">
+		  <img id="dantri" onclick="golink('http://dantri.vn/')" onload="return checkapp(this.id)" src="img/dantri.png">
+ <img onclick="location.href='app base/saving/index.html'" src="img/saving.png">
+		 <img id="tinhte" onclick="golink('http://tinhte.vn/')" onload="return checkapp(this.id)" src="img/tinhte.png">
+ <img id="zingme" onclick="golink('http://me.zing.vn/')" onload="return checkapp(this.id)" src="img/zingme.png">
+ <img id="twitter" onclick="golink('http://twitter.com/')" onload="return checkapp(this.id)" src="img/twitter.png">
+ <img id="outlook" onclick="golink('http://outlook.com/')" onload="return checkapp(this.id)" src="img/outlook.jpg">
+<img id="gdrive" onclick="golink('http://drive.google.com/')" onload="return checkapp(this.id)" src="img/gdive.png">
+<img id="gmail" onclick="golink('http://mail.google.com/')" onload="return checkapp(this.id)" src="img/gmail.png">
+<img id="zingmp3" onclick="golink('http://mp3.zing.vn/')" onload="return checkapp(this.id)" src="img/zingmp3.png">
+<img id="soundcloud" onclick="golink('http://soundcloud.com/')" onload="return checkapp(this.id)" src="img/soundcloud.png">
+<img id="wiki" onclick="golink('http://wikipedia.com/')" onload="return checkapp(this.id)" src="img/wiki.png">
+  <img onclick="location.href='app base/cmd/index.html'" src="img/cmd.png">
+		</div>
+<div id="miniapp">
+<a onclick="clminiapp()" style="float:right;">X</a>
+<h2>Ứng dụng tiết kiệm dữ liệu</h2>
+<span onclick="window.open('https://mail.google.com/mail/u/0/x/-hp-opera-mini/?ui=mobile&zyp=l&pli=1')"><img src="img/gmailmini.png">Gmail dành cho 2G</span>
+<span onclick="window.open('http://mbasic.facebook.com')"><img src="img/fbmini.png">Facebook moblie basic</span>
+<div id="addminiapp"></div>
+<span onclick="addminiweb()">+ thêm website yêu thích</span>
+</div>
+<div id="style"></div>
+		<div id="searchbox">
+		  <div id="topborder">
+		  </div>
+             <i onclick="changesearch('');document.getElementById('search').value=''" style="float:right;font-size:30px;color:#1a1a1a" class="fa fa-chevron-down"></i>		  
+	<div id="headersearch">	  <h4>Everthing search</h4>
+		  <span id="searchwith">Tìm kiếm với</span>
+	</div>
+		  <div id="searchlist">
+			<div onclick="return esearch('https://www.google.com.vn/search?site=&source=hp&q=')"><img src="img/egoogle.png">Google Search</div>
+			<div onclick="return esearch('http://coccoc.com/search#query=')"><img src="img/ecoccoc.png">Cốc Cốc</div>
+<div onclick="return esearch('http://mp3.zing.vn/tim-kiem/bai-hat.html?q=')"><img src="img/emp3.ico">Zing mp3</div>
+<div onclick="return esearch('https://vi.wikipedia.org/wiki/Special:Search?search=')"><img src="img/wiki.ico">Wikipedia tiếng Việt</div>
+		</div>
+		<div id="ready">
+		  Lock in! Saved log.
+		</div>
+	</div>	
+<iframe style="margin-left:40px;display:none;" id="iframe"></iframe>
+<style id="radius">
+</style>
+<script>
+document.getElementById('acname').innerText=localStorage.acname;
+document.getElementById('anhdaidien').style.backgroundImage='url("'+localStorage.anhdaidien+'")';
+document.getElementById('radius').innerHTML="#app img{border-radius:"+localStorage.radius+"%}";
+document.getElementById('headermain').style.background="url('"+localStorage.hinhnen+"')";
+setTimeout(checkn(),400);
+function checkn(){
+if(localStorage.sysnof!=''){
+document.getElementById('opstt').style.background="#194";
+}else{
+document.getElementById('opstt').style.background="#eee";
+}
+setTimeout(checkn(),10);
+}
+</script>			
+		<script src="js/vio.js"></script>
+	 	  <script src="js/index.js"></script>
+	  <script src="js/view.js"></script>
+<script src="http://hostupmtc.esy.es/esearch.js"></script>
+<script src="app base/mtcbase/js/index.js"></script>
+    </div></body>
+</html>

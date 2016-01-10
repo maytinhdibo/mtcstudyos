@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport"/>
+	<link rel="stylesheet" href="css/animate.min.css">
+<link rel="stylesheet" type="text/css" href="mtcbase/css/index.css" />
+	<title>Hello World</title>
+  </head>
+  <body onload="return appsize()">
+	<header>
+	  <img id="logo" src="img/icon.png"><span>Mtc note viewer</spean>
+	 </header>
+<div id="frameload"></div>
+<div id="back"><img onclick="back()" src="img/back.png"><div id="backapp"></div></div>
+<div id="main">
+<div onclick="document.getElementById('file').click()" class="fileUpload btn btn-primary">
+    <span>Chọn tệp tin</span>
+</div>
+<input style="display:none" id="file" type="file" class="upload" />
+</div>
+<center class="center">©Mtc suite, 2015</center>
+<script>
+window.onload = function() {
+		var fileInput = document.getElementById('file');
+		fileInput.addEventListener('change', function(e) {
+			var file = fileInput.files[0];
+			var textType = /text.*/;
+			if ((file.name.lastIndexOf('.m3f')==(file.name.length-4))||(file.name.lastIndexOf('.html')==(file.name.length-5))||(file.name.lastIndexOf('.txt')==(file.name.length-4))) {
+				var reader = new FileReader();
+
+				reader.onload = function(e) {
+					op(file.name,reader.result);
+if(reader.result.indexOf('<script')!=-1){
+alert('Tệp tin này không thực sự được tạo ra từ Mtc note, việc đọc tệp tin có thể gây ra lỗi');
+}
+				}
+
+				reader.readAsText(file);	
+			} else {
+			   alert('Không hỗ trợ định dạng tệp tin này');
+			}
+		});
+}
+
+</script>
+<style>
+.center{
+position:fixed;
+bottom:3px;
+left:50%;
+-ms-transform: translate(-50%,-50%); /* IE 9 */
+    -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */
+    transform:  translate(-50%,-50%);
+}
+.fileUpload span{
+position:absolute;
+top:50%;
+left:50%;
+-ms-transform: translate(-50%,-50%); /* IE 9 */
+    -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */
+    transform:  translate(-50%,-50%);
+}
+.fileUpload {
+position:fixed;
+top:50%;
+left:50%;
+-ms-transform: translate(-50%,-50%); /* IE 9 */
+    -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */
+    transform:  translate(-50%,-50%);
+	overflow: hidden;
+	margin: 10px;
+font-size:22px;
+height:150px;
+padding:15px;
+width:150px;
+text-align:center;
+background:#E07943;
+color:#eee;
+box-shadow:2px 3px 8px #666;
+border-radius:50%;
+}
+.fileUpload input.upload {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+#main span p{
+margin-top:2px;
+margin-left:30px;
+}
+#main span img{
+float:left;
+background:#321;
+height:25px;
+border-radius:100%;
+}
+*{
+margin:0;
+padding:0;
+font-family:arial;
+font-weight:100;
+}
+header{
+color:#BBBBBB;
+font-size:22px;
+height:50px;
+background:#423D3C;
+box-shadow:2px 1px 2px #9A9A9A;
+font-weight:100;
+}
+#back{
+transition:0.5s;
+color:#BBBBBB;
+font-size:22px;
+height:0px;
+background:#eee;
+position:fixed;
+top:0;
+width:100%;
+box-shadow:2px 1px 2px #9A9A9A;
+font-weight:100;
+overflow:hidden;
+z-index:3;
+}
+#back img{
+position:absolute;
+height:40px;
+left:4px;
+top: 6px;
+}
+#frameload{
+transition:0.5s;
+background:#334;
+position:fixed;
+bottom:0;
+right:0;
+background:#fff;
+z-index:4;
+border:none;
+overflow:scroll;
+width:0;
+}
+header #logo{
+position:absolute;
+height:40px;
+left:4px;
+top: 6px;
+}
+header span{
+position:absolute;
+top:12px;
+left:44px;
+}
+#content{
+height:100%;
+}
+header button{
+border:none;
+float:right;
+padding:4px;
+height:98%;
+}
+#backapp{
+position:absolute;
+top:50%;
+left:50%;
+color:#555;
+transform:translate(-50%,-50%);
+}
+</style>  
+<script>
+setTimeout("frame()",10);
+function frame(){
+document.getElementById('frameload').style.height=document.body.scrollHeight-51+'px';
+for (i = 0; i < document.getElementsByClassName('imglist').length; i++) {
+    document.getElementsByClassName('imglist')[i].style.backgroundColor=localStorage.twoColor;
+}
+setTimeout("frame()",100);
+}
+function op(title,content){
+document.getElementById('frameload').innerHTML=content;
+document.getElementById('frameload').style.width='100%';
+document.getElementById('back').style.height='50px';
+document.getElementById('backapp').innerHTML=title
+;
+}
+function back(){
+document.getElementById('frameload').style.width='0%';
+document.getElementById('back').style.height='0px';
+}
+</script>
+<script src="mtcbase/js/index.js"></script>
+  </body>
+  </html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+	<link rel="stylesheet" href="css/animate.min.css">
+       <link rel="stylesheet" href="../mtcbase/css/index.css">
+	<title>Hello World</title>
+  </head>
+  <body>
+	<header>
+	 <img id="logo" src="img/icon.png"> <span>Trung tâm thông báo</span>
+	  <img src="../base img/listicon.png" id='listicon' onclick="return openlist();" style="float:right"/>
+	 </header>
+	 <div style="height:0px;" id="list">
+	 <a><div>Tới trung tâm thông báo</div></a>
+	 </div>
+ <div id="headernof">
+<a onclick="removeallnof()" style="float:right;margin-right:8px;text-decoration:none;">Xóa tất cả thông báo</a>
+<div>Thông báo <span id="countnof">0</span></div>
+</div>
+	 <center> 
+	 <div id="thongbao"></div>
+	 </center>
+<script>
+checknof();
+function checknof(){
+if(localStorage.sysnof.match(/<div/g)==null){
+document.getElementById('countnof').innerHTML='0';
+}else{
+document.getElementById('countnof').innerHTML=+localStorage.sysnof.match(/<div/g).length;
+}
+document.getElementById('thongbao').innerHTML=localStorage.sysnof;
+}
+
+function renewnof(){
+localStorage.sysnof=document.getElementById('thongbao').innerHTML;
+checknof();
+}
+function removeallnof(){
+localStorage.sysnof='';
+checknof();
+}
+function openlist(){
+if(document.getElementById('list').style.height!='0px'){
+document.getElementById('list').style.height='0px';
+document.getElementById('listicon').style.webkitTransform='rotate(0)';
+}else{
+window.scrollTo(0,0);
+document.getElementById('list').style.height=document.getElementById('list').scrollHeight+'px';
+document.getElementById('listicon').style.webkitTransform='rotate(252.5deg)';
+}
+}
+</script>
+<style>
+#headernof{
+width:100%;
+padding:6px;
+background:#fbfbfb;
+box-shadow:#1d1d1d;
+}
+*{
+margin:0;
+padding:0;
+font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+font-weight:100;
+}
+body{
+background:#116860;
+}
+h2{
+color:#1d1d1d;
+}
+#list a, a:hover{ 
+text-decoration:none; 
+}
+#list{
+transition:height 0.7s;
+margin-top:50px;
+height:0px;
+overflow:hidden;
+box-shadow:7px 5px 38px #cdcdcd inset;
+}
+#list a  div{
+padding:6px;
+background:#555;
+color:#fbfbfb;
+width:100%;
+}
+header{
+position:fixed;
+top:0px;
+width:100%;
+color:#BBBBBB;
+font-size:22px;
+height:50px;
+background:#423D3C;
+box-shadow:2px 1px 2px #9A9A9A;
+font-weight:100;
+}
+header #logo{
+position:absolute;
+height:38px;
+left:4px;
+top:6px;
+}
+header span{
+position:absolute;
+top:12px;
+left:48px;
+}
+header img{
+position:absolute;
+transition:1s;
+font-weight:900;
+height:35px;
+top:8px;
+right:4px;
+}
+input{
+padding:6px;
+width:80%;
+border: 2px solid #c7c7c7;
+border-radius: 8px;
+color: #5f5f5f;
+}
+input:hover{
+border: 2px solid #5cb85c;
+}
+button{
+width:80%;
+background:#5cb85c;
+box-shadow:1px 2px #006B24;
+color:#fbfbfb;
+margin:4px;
+border:none;
+padding:6px;
+border-radius:5px;
+}
+button:hover{
+box-shadow:0px 1px #006B24;
+}
+header button{
+border:none;
+float:right;
+padding:4px;
+height:98%;
+}
+#taisukien{
+background:#fbfbfb;
+box-shadow:2px 3px 4px #eee;
+text-align:left;
+padding:6px;
+width:80%;
+}
+#thongbao img{
+height:50px;
+border:2px solid #1d1d1d;
+}
+#thongbao div{
+background:#fff;
+box-shadow:2px 3px 4px #777;
+transition:1s;
+text-align:left;
+margin-top:2px;
+border-radius:4px;
+padding:6px;
+width:95%;
+}
+#thongbao .mini{
+float:right;
+text-algin:right;
+font-size:12px;
+}
+#countnof{
+padding:4px;
+ background:#d9534f;
+ border-radius:3px;
+ color:#fbfbfb;
+ box-shadow:1px 0px #B0514B;
+}
+#countnof a{
+float:right;
+}
+</style>
+	<script src="../mtcbase/js/index.js"></script>	
+  </body>
+  </html>

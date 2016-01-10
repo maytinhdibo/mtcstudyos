@@ -1,0 +1,63 @@
+<div class="input" id="avatar">
+    <div id="anhdaidien"></div>
+    <div class="upload">
+		Thay đổi ảnh
+		<input id="file1" type="file">
+	</div>
+		Kiểu hình nền
+	<select style="width:40%">
+	<option value="cover">Khớp màn hình</option>
+	<option value="contain">Tự động</option>
+	</select>
+</div>
+<div class="input" id="background">
+    <img id="hinhnen">
+    <div class="upload">
+		Thay đổi hình nền
+		<input id="file2" type="file">
+	</div>
+
+	<button onclick="save()">Lưu thông tin</button>
+</div>
+<script>
+	document.getElementById('file1').addEventListener('change', function(e) {
+		var file =document.getElementById('file1').files[0];
+		var imageType = /image.*/;
+		if (file.type.match(imageType)) {
+			var reader = new FileReader();
+			reader.onload = function(e) {
+		var img = new Image();
+	document.getElementById('anhdaidien').style.backgroundImage='url("'+reader.result+'")';
+	sessionStorage.anhdaidien=reader.result;
+			}
+			reader.readAsDataURL(file);	
+		} else {
+			alert("Tệp tin ảnh không hợp lệ!");
+		}
+	});
+
+	document.getElementById('file2').addEventListener('change', function(e) {
+		var file =document.getElementById('file2').files[0];
+		var imageType = /image.*/;
+		if (file.type.match(imageType)) {
+			var reader = new FileReader();
+			reader.onload = function(e) {
+		var img = new Image();
+				document.getElementById('hinhnen').src=reader.result;
+			}
+			reader.readAsDataURL(file);	
+		} else {
+			alert("Tệp tin ảnh không hợp lệ!");
+		}
+	});
+	document.getElementById('hinhnen').src=localStorage.hinhnen;
+	document.getElementById('anhdaidien').style.backgroundImage='url("'+localStorage.anhdaidien+'")';
+	sessionStorage.anhdaidien=localStorage.anhdaidien;
+	function save(){
+	localStorage.anhdaidien=sessionStorage.anhdaidien;
+	localStorage.hinhnen=document.getElementById('hinhnen').src;
+	top.hinhnen();
+	toastShow('Xong');
+	}
+</script>
+<script src="../app base/mtcbase/js/index.js"></script>

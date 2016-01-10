@@ -1,0 +1,1 @@
+<iframe onload="alert(this.contentDocument.title)" src="http://mtcsuite.zz.mu"/>

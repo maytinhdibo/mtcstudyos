@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+    <link rel="stylesheet" href="../mtcbase/css/index.css">
+	<link rel="stylesheet" href="../../css/animate.min.css">
+	<title>Hello World</title>
+  </head>
+   <body background="bg.jpg">
+<div id="main">
+	  <input id="searchip" type="search" onkeyup="return changesearch(this.value)" onclick="return changesearch(this.value)" id="search"/>
+</div>
+<div id="dexuat">
+<h2>Đề xuất tìm kiếm</h2>
+<span id="searchdx1" onclick="dexuat(this.innerText)" data-wow-duration="1.3s" class="wow bounceInUp">tin học trẻ nghệ an</span>
+<span id="searchdx2" onclick="dexuat(this.innerText)" data-wow-duration="1.3s" class="wow bounceInUp">thanh niên</span>
+<span id="searchdx3" onclick="dexuat(this.innerText)" data-wow-duration="1.3s" class="wow bounceInUp">bphone</span>
+<span id="searchdx4" onclick="dexuat(this.innerText)" data-wow-duration="1.3s" class="wow bounceInUp">hoạt hình đô-rê-mon</span>
+</div>
+<div id="searchbox">
+		  <div id="topborder">
+		  </div>
+             <i onclick="changesearch('');document.getElementById('search').value=''" style="float:right;font-size:30px;color:#1a1a1a" class="fa fa-chevron-down"></i>		  
+	<div id="headersearch">	  <h2>Everthing search</h2>
+		  <span id="searchwith">Tìm kiếm với</span>
+	</div>
+		  <div id="searchlist">
+			<div onclick="return esearch('https://www.google.com.vn/search?site=&source=hp&q=')"><img src="../../img/egoogle.png">Google Search</div>
+			<div onclick="return esearch('http://coccoc.com/search#query=')"><img src="../../img/ecoccoc.png">Cốc Cốc</div>
+<div onclick="return esearch('http://mp3.zing.vn/tim-kiem/bai-hat.html?q=')"><img src="../../img/emp3.ico">Zing mp3</div>
+<div onclick="return esearch('https://vi.wikipedia.org/wiki/Special:Search?search=')"><img src="../../img/wiki.ico">Wikipedia tiếng Việt</div>
+		</div>
+<script>
+document.getElementById('searchdx1').innerText=localStorage.lichsu;
+document.getElementById('searchdx2').innerText=localStorage.dx2;
+document.getElementById('searchdx3').innerText=localStorage.dx3;
+document.getElementById('searchdx4').innerText=localStorage.dx4;
+function changesearch(value){
+	if(value!=''){
+	document.getElementById('searchbox').style.maxHeight="80%";
+	document.getElementById('searchwith').innerHTML='<b>Tìm kiếm "</b><i>'+value+'" </i> với:';
+     	}else{
+	document.getElementById('searchbox').style.maxHeight="0px";	
+	}
+	sessionStorage.esearchvalue=value;
+}
+function esearch(q){
+localStorage.lichsu=sessionStorage.esearchvalue;
+localStorage.elichsu=localStorage.elichsu+'<span>'+sessionStorage.esearchvalue+'</span>';
+	location.href=q+sessionStorage.esearchvalue;
+}
+function dexuat(q){
+document.getElementById('searchip').value=q;
+changesearch(q);
+}
+</script>
+<style>
+#dexuat{
+top:25%;
+position:fixed;
+top:25%;
+color:#333;
+width:100%;
+}
+#dexuat span{
+border-bottom:solid 1.2px #999;
+font-size:20px;
+display:block;
+padding:6px;
+width:100%;
+}
+*{
+margin:0;
+font-family:arial;
+font-weight:100;
+background-size:cover;
+color:#1d1d1d;
+}
+input{
+width:90%;
+margin:5%;
+border:none;
+background: rgba(255, 255, 256, 0.7);
+box-shadow:2px 1px 0px rgba(215, 215, 215, 0.7);
+height:45px;
+font-size:20px;
+padding:6px;
+border-radius:5px;
+}
+#searchbox{
+  -webkit-transition:1.5s;
+border:none;
+padding:6px;
+background:#fbfbfb;
+position:fixed;
+  z-index:1;
+  bottom:0;
+  width:90%;
+  max-height:0px;
+  margin-left:5%;
+  overflow:scroll;
+  overflow-x: hidden;
+border-radius:6px 6px 0px 0px;
+box-shadow:1px 4px 9px #888 inset;
+}
+#headersearch{
+ float:top;
+ }
+#searchlist div{
+  font-size:14px;
+  padding:6px 0px 6px 0px;
+  width:100%;
+   text-align:center;
+   border-bottom:solid 1px #cfcfcf;
+}
+#searchlist img{
+  float:left;
+border-radius:5px;
+margin-left:2px;
+  height:16px;
+box-shadow:9px 2px 3px #1d1d1d inset;
+}
+#main{
+position:fixed;
+background:rgba(255, 128, 68, 0.7);
+height:100%;
+width:100%;
+}
+</style>
+<script>
+document.getElementById('main').style.background=localStorage.threeColor;
+document.body.style.background="url('"+localStorage.hinhnen+"')";
+</script>
+<script src="../mtcbase/js/index.js"></script>	
+	   <script src="../../js/wow.min.js"></script>
+     <script>
+        new WOW().init();
+         </script>
+  </body>
+  </html>
+

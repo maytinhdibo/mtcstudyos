@@ -1,0 +1,243 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+		<title>Mtc note</title> 
+		<meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width"> 
+		<link rel="stylesheet" href="css/index.css" />
+<link rel="stylesheet" href="css/animate.min.css">
+	<body onbeforeonload="document.getElementById('mtc_boot_loader').style.display='block';" onload="return load_end()" background="img/bg.png"> 	
+<style>
+*{
+margin:0;
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+body{
+background-size:cover;
+}	
+	select{
+	border-radius:none;
+	width:100%;
+	height:30px;
+	}
+	input{
+	height:40px;
+	color:#787675;
+	font-size:18px;
+	padding:3px;
+	box-shadow:2px 3px 2px #A8A8A8 inset;
+	border:solid 0.4px #ddd;	
+	border-radius:4px;
+	}
+	#newdoc{
+	 position: absolute;
+     bottom:43px;
+     right:100px;
+	 display:none;
+	 width:0px;
+	}
+		#prompt button, #open button{
+	width:38%;
+	border-radius:4px;
+	border:none;
+	box-shadow:2px 2px 1px #cfcfcf;
+	height:50px;
+	}
+	#prompt{
+	color:#9a9a9a;
+	backgound-color:#000;
+	}
+	#open{
+	width:60%;
+	}
+	#tool, #info, #prompt, #open{
+z-index:1000;
+margin-top:20%;
+margin-left:20%;
+display:none;
+border:solid 2px #FAAF84;
+position: absolute;
+background-color:#fbfbfb;
+box-shadow:4px 6px 7px #4D4D4D;
+min-width:20%;
+margin-right:40px;
+border-radius:15px;
+padding:6px;
+}
+h3{
+font-weight:100;
+font-size:22px;
+}
+.radiusBtn{
+height:50px;
+width:50px;
+font-size:25px;
+color:#fff;
+border-radius:100%;
+margin:3px;
+box-shadow:0px 0px 2px #1d1d1d;
+-webkit-appearance: none;
+}
+.radiusBtn:hover{
+transition:0.75s;
+transform: rotate(360deg);
+background:#fff;
+box-shadow:0px 0px 8px #1d1d1d;
+}
+#addbtn{
+ position: absolute;
+ bottom:40px;
+ right:40px
+}
+.mtc_alert{
+background:#345643;
+padding:0;
+border-radius:0px 0px 9px 9px;
+position:absolute;
+z-index:500;
+color:#fbfbfb;
+padding:4px;
+width:40%;
+height:0;
+text-align:center;
+overflow:hidden;
+left:30%;
+opacity:1;
+box-shadow:2px 1px 2px #598E74;
+}
+.mtc_alert button{
+color:#fbfbfb;
+font-size:18px;
+width:40%;
+background:none;
+border:none;
+}
+body{
+box-shadow:inset -4px -7px 54px #000;
+}
+#list{
+overflow-y:auto;
+}
+#list img{
+width:30%;
+padding:10px;
+}
+#list .doc{
+display:inline-table;
+width:31%;
+background:#fbfbfb;
+border-radius:4px;
+margin:9px;
+box-shadow:1px 2px 3px #9a9a9a;
+}
+#list .name{
+float:right;
+width:60%;
+height:94%;
+color:#1d1d1d;
+margin-top:3%;
+}
+
+#mtc_boot_loader{
+ background:#343953;
+ top:0;
+ color:#fbfbfb;
+  -webkit-transition: all 0.75s ease;  
+ width:100%;
+ height:100%;
+ opacity:1;
+ transition-duration:2s;
+ z-index:10000;
+ position:absolute;
+}
+#mtc_boot_loader div{
+width:70%;
+top:45%;
+position:absolute;
+margin-left:13%;
+padding:5px;
+}
+#ghim{
+position:fixed;
+z-index:501;
+width:300px;
+right:10px;
+box-shadow:1px 2px 3px #222;
+}
+		</style>
+<img id="ghim" onclick="this.remove();localStorage.Minstall='1'" class="wow bounce" data-wow-offset="100" data-wow-duration="2s" data-wow-iteration="100" src="img/ghim.png"/>
+		<center><div id="mtc_boot_loader">
+			<div>
+				<img src="img/loading.gif">
+				</div>	</div></center>
+<header align="center" id="header">
+<h3>Mtc OneSuite Note 
+<img onmouseover="document.getElementById('delhelp').style.display='block'" onmouseout="document.getElementById('delhelp').style.display='none'" style="float:right;height:20px;padding:4px;" src="img/del.png"/></h3>
+</header>
+<img id="delhelp" style="position:absolute;right:0;height:60px;padding:1px;display:none;" src="img/help.png"/>
+<div class="mtc_alert" id="alert">
+<h3>
+Tạo tài liệu này?</h3>
+<button onclick="return them(document.getElementById('newdoc').value)" style="border-right:solid 1px #fbfbfb;">Tạo</button>
+<button onclick="document.getElementById('newdoc').value='';document.getElementById('newdoc').style.display='none'">Thôi</button>
+</div>
+	  <center><div id="list"></div></center>
+<input id="newdoc" value="Tên tài liệu mới" type="text">
+	<button onclick="return addopen()" id="addbtn" style="background:#FC6508;border:2px solid #F25816" class="radiusBtn">+</button>
+		<script> 
+document.getElementById('list').innerHTML=localStorage.list;		
+document.getElementById('list').style.height=window.innerHeight-document.getElementById('header').offsetHeight+'px';
+ function mo(name){  	
+localStorage.$thisdoc=name;
+ location.href='worker.html';
+	   }  
+	   function del(id){
+	  if(confirm('Bạn muốn xóa tài liệu '+id+' ?')){
+	  localStorage.removeItem(id);
+	  location.reload();
+	  document.getElementById(id).remove();
+	  }else{location.reload();}
+	  }
+	  function checkremove(id){
+       if(localStorage.getItem(id)==null){
+	   document.getElementById(id).remove();
+	   }
+	  }
+	  function load_end(){
+document.getElementById('mtc_boot_loader').style.opacity='0';
+setTimeout("document.getElementById('mtc_boot_loader').style.display='none'",750);
+}
+if(localStorage.Minstall=='1'){document.getElementById('ghim').style.display='none'};
+function addopen(){
+document.getElementById('newdoc').style.display='block';
+setTimeout("document.getElementById('newdoc').style.width=window.innerWidth-150+'px'",10);
+alertcheck();
+}		
+function alertcheck(){
+if(document.getElementById('newdoc').value!=""){
+document.getElementById('alert').style.height='55px';
+document.getElementById('alert').style.border='none';
+}else{
+document.getElementById('alert').style.height='0px';
+}
+setTimeout('alertcheck()',200);
+}
+		function them(tenmoi){
+		if(localStorage.getItem('list')==null){
+		localStorage.setItem('list','');
+		}
+ if((localStorage.list.indexOf('id="'+tenmoi+'"')==-1)){
+        localStorage.setItem('list',localStorage.getItem('list')+'<div id="'+tenmoi+'" class="doc"><img ondblclick="return del(this.id)" onload="return checkremove(this.id)" onclick="return mo(this.id)" src="img/icon.png" title="'+tenmoi+'" id="'+tenmoi+'"/><div class="name"><span>'+tenmoi+'</span></div></div>');
+        localStorage.$thisdoc=tenmoi; 
+		location.href='worker.html#new';
+}else{ 
+localStorage.$thisdoc=tenmoi; 
+location.href='worker.html';
+}
+        }   	
+      		</script>
+<script src="js/wow.min.js"></script> 		
+<script>
+        new WOW().init();
+         </script>
+	</body></html>

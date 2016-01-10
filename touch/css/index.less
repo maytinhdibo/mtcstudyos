@@ -1,0 +1,83 @@
+@color: #2d5e8b;
+*{
+margin:0;
+font-family: arial;
+font-weight: 100;
+}
+textarea:focus, input:focus{
+    outline: 0;
+}
+.healist{
+background-color:rgba(44,44,44,0.6);
+box-shadow:-1px -1px 12px #666 inset;
+color:#ddd;
+}
+h2,h3{
+padding:5px;
+}
+header{
+position:fixed;
+top:0;
+width:100%;
+background:#fffffb;
+color:#666;
+height:40px;
+margin-bottom:40px;
+}
+#esearch{
+position:fixed;
+transform:translate(-50%,0);
+left:50%;
+top:6px;
+width:400px;
+max-width:40%;
+font-size:16px;
+padding:3px;
+border:none;
+border-bottom:2px solid #999;
+}
+#esearch:hover{
+border-bottom-color:#116521;
+}
+#esearchbox{
+position:fixed;
+transform:translate(-50%,0);
+left:50%;
+top:40px;
+width:55%;
+height:200px;
+max-height:40%;
+background:#fffffb;
+box-shadow:1px 2px 3px #666;
+}
+#noficon{
+height:40px;
+padding:0;
+margin:0;
+position:fixed;
+right:0;
+}
+#nof{
+transition:0.5s;
+position:fixed;
+top:40px;
+right:0;
+width:300px;
+height:0%;
+overflow-y:scroll;
+background:#fffffb;
+box-shadow:-1px 2px 1px #444;
+}
+#searchbox,#searchhistory{
+position:fixed;
+bottom:0;
+width:49.9%;
+background:@color;
+height:50px;
+}
+#searchbox{
+	left:0;
+}
+#searchhistory{
+	right: 0;
+}

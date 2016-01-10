@@ -1,0 +1,16 @@
+Thông báo hiện chỉ được sử dụng với dogky và hệ thống.
+<br><a href="#" onclick="top.document.getElementById('nof').style.height=top.document.body.clientHeight-50+'px';">Đến trung tâm thông báo</a>
+<p class="label">Âm thanh thông báo:</p>
+<select id="audionof" onchange="audionof(this.value)">
+<option value="nof.mp3">Mặc định</option>
+<option value="tiengboc.mp3">Tiếng bóc</option>
+<option value="tiengchuong.mp3">Tiếng chuông</option>
+</select>
+<script>
+document.getElementById('audionof').value=localStorage.audionof.substring(6,localStorage.audionof.length);
+function audionof(mp3){
+localStorage.audionof="audio/"+mp3;
+top.document.getElementById('nofaudio').src="audio/"+mp3;
+top.document.getElementById('nofaudio').play();
+}
+</script>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport"/>
+	<link rel="stylesheet" href="css/animate.min.css">
+<link rel="stylesheet" type="text/css" href="../app base/mtcbase/css/index.css" />
+	<title>Hello World</title>
+  </head>
+  <body>
+<button onclick="xoa()" style="float:right;">Xoá lịch sử t.kiếm</button>
+<h2>Lịch sử tìm kiếm</h2>
+<center id="html">
+</center>
+<script>
+if((localStorage.elichsu!=null)&&(localStorage.elichsu!='')){
+document.getElementById('html').innerHTML=localStorage.elichsu;
+}else{
+document.getElementById('html').innerHTML="<h3>Không có lịch sử trên Everything search";
+}
+function xoa(){
+localStorage.elichsu='';
+localStorage.elichsu='tin học trẻ';
+document.getElementById('html').innerHTML="<h3>Không có lịch sử trên Everything search hiện có";
+toastShow('Hoàn tất');
+}
+</script>
+<style>
+span{
+display:block;
+border-bottom:solid 1.2px #cfcfcf;
+}
+*{
+margin:0;
+font-family:arial;
+font-weight:100;
+color:#555;
+padding:6px;
+}
+h2{
+
+}
+input{
+border:solid 0px #999;
+border-radius:3px;
+box-shadow:0px 1px 3px #666;
+width:80%;
+background:#eee;
+font-size:18px;
+padding:8px;
+}
+select{
+border:solid 0px #999;
+border-radius:0 10px 0 10px;
+box-shadow:0px 1px 3px #666;
+width:80%;
+background:#eee;
+font-size:18px;
+padding:8px;
+}
+button{
+margin:3px;
+box-shadow:0px 1px 3px #666;
+border:none;
+font-size:20px;
+background:#eee;
+}
+</style>
+<script src="../app base/mtcbase/js/index.js"></script>
+  </body>
+  </html>

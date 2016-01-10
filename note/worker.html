@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>summernote</title>
+   <link rel="stylesheet" href="css/index.css" />
+  <!-- Khu vuc ma nguon -->
+  <!-- include jquery -->
+  <script src="src/jquery-1.9.1.min.js"></script> 
+
+  <!-- include libraries BS3 -->
+  <link rel="stylesheet" href="src/bootstrap.min.css" />
+  <script type="text/javascript" src="src/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="src/font-awesome.min.css" />
+
+  <!-- include codemirror (codemirror.css, codemirror.js, xml.js, formatting.js)-->
+  <link rel="stylesheet" type="text/css" href="src/codemirror.min.css" />
+  <link rel="stylesheet" href="src/blackboard.min.css">
+  <link rel="stylesheet" href="src/monokai.min.css">
+  <script type="text/javascript" src="src/codemirror.js"></script>
+  <script src="src/xml.min.js"></script>
+  <script src="src/formatting.min.js"></script>
+  <!-- include summernote -->
+  <link rel="stylesheet" href="src/summernote.css">
+  <script type="text/javascript" src="src/summernote.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+      $('.summernote').summernote({
+        height: 200,
+        tabsize: 2,
+        codemirror: {
+          theme: 'monokai'
+        }
+      });
+    });
+  </script>
+
+</head>
+<body onunload="alert('Bạn có muốn thoát?')">
+<div id="headernew"></div>
+<iframe src="" id="musiciframe"></iframe>
+<div id="bieutuong">
+<h2>Chọn biểu tượng nhanh</h2>
+<img onclick="addicon('lib/libview/speech117.png')" src="lib/libview/speech117.png">
+<img onclick="addicon('lib/libview/dollar84.png')" src="lib/libview/dollar84.png">
+<img onclick="addicon('lib/libview/earth26.png')" src="lib/libview/earth26.png">
+<img onclick="addicon('lib/libview/heart72.png')" src="lib/libview/heart72.png">
+<img onclick="addicon('lib/libview/like80.png')" src="lib/libview/like80.png">
+<img onclick="addicon('lib/libview/ok4.png')" src="lib/libview/ok4.png">
+<img onclick="addicon('lib/libview/open103.png')" src="lib/libview/open103.png">
+<img onclick="addicon('lib/libview/scream1.png')" src="lib/libview/scream1.png">
+<img onclick="addicon('lib/libview/speech142.png')" src="lib/libview/speech142.png">
+<img onclick="addicon('lib/libview/speech143.png')" src="lib/libview/speech143.png">
+<img onclick="addicon('lib/libview/speech144.png')" src="lib/libview/speech144.png">
+<img onclick="addicon('lib/libview/speech145.png')" src="lib/libview/speech145.png">
+<img onclick="addicon('lib/libview/speech146.png')" src="lib/libview/speech146.png">
+<img onclick="addicon('lib/libview/speech147.png')" src="lib/libview/speech147.png">
+<img onclick="addicon('lib/libview/speech149.png')" src="lib/libview/speech149.png">
+<img onclick="addicon('lib/libview/speech150.png')" src="lib/libview/speech150.png">
+<img onclick="addicon('lib/libview/square183.png')" src="lib/libview/square183.png">
+<img onclick="addicon('lib/libview/star129.png')" src="lib/libview/star129.png">
+<img onclick="addicon('lib/libview/statistics2.png')" src="lib/libview/speech145.png">
+<img onclick="addicon('lib/libview/thinking1.png')" src="lib/libview/thinking1.png">
+<img onclick="addicon('lib/libview/thinking2.png')" src="lib/libview/thinking2.png">
+<img onclick="addicon('lib/libview/thought7.png')" src="lib/libview/thought7.png">
+<img onclick="addicon('lib/libview/tick11.png')" src="lib/libview/tick11.png">
+<img onclick="addicon('lib/libview/user77.png')" src="lib/libview/user77.png">
+<img onclick="addicon('lib/libview/iconcamxuc/face1.png')" src="lib/libview/iconcamxuc/face1.png">
+<img onclick="addicon('lib/libview/iconcamxuc/face2.png')" src="lib/libview/iconcamxuc/face2.png">
+<img onclick="addicon('lib/libview/iconcamxuc/face3.png')" src="lib/libview/iconcamxuc/face3.png">
+<img onclick="addicon('lib/libview/iconcamxuc/face4.png')" src="lib/libview/iconcamxuc/face4.png">
+<img onclick="addicon('lib/libview/iconcamxuc/face5.png')" src="lib/libview/iconcamxuc/face5.png">
+<img onclick="addicon('lib/libview/iconcamxuc/face6.png')" src="lib/libview/iconcamxuc/face6.png">
+<img onclick="addicon('lib/libview/iconcamxuc/face7.png')" src="lib/libview/iconcamxuc/face7.png">
+<img onclick="addicon('lib/libview/iconcamxuc/face10.png')" src="lib/libview/iconcamxuc/face10.png">
+<img onclick="addicon('lib/libview/iconcamxuc/face11.png')" src="lib/libview/iconcamxuc/face11.png">
+<img onclick="addicon('lib/libview/iconcamxuc/face12.png')" src="lib/libview/iconcamxuc/face12.png">
+<img onclick="addicon('lib/libview/iconcamxuc/face13.png')" src="lib/libview/iconcamxuc/face13.png">
+<img onclick="addicon('lib/libview/iconcamxuc/face14.png')" src="lib/libview/iconcamxuc/face14.png">
+<img onclick="addicon('lib/libview/iconcamxuc/face15.png')" src="lib/libview/iconcamxuc/face15.png">
+<img onclick="addicon('lib/libview/iconcamxuc/face16.png')" src="lib/libview/iconcamxuc/face16.png">
+<img onclick="addicon('lib/libview/iconcamxuc/face20.png')" src="lib/libview/iconcamxuc/face20.png">
+<img onclick="addicon('lib/libview/iconcamxuc/face17.png')" src="lib/libview/iconcamxuc/face17.png">
+<img onclick="addicon('lib/libview/iconcamxuc/face18.png')" src="lib/libview/iconcamxuc/face18.png">
+<img onclick="addicon('lib/libview/iconcamxuc/face21.png')" src="lib/libview/iconcamxuc/face21.png">
+</div>
+<header id="header">
+  <button onclick="optab()" id="file">Tài liệu </button>
+<button type="button" data-toggle="modal" data-target="#savefile">Lưu tệp</button>
+<button type="button" data-toggle="modal" data-target="#chen">Chèn hình nền</button>
+<button type="button" data-toggle="modal" data-target="#chennhac">Chèn nhạc nền</button>
+<img onclick="opmusic()" style="float:right;height:28px;margin:2px" src="img/music.png">
+<button onclick="opbieutuong()" style="float:right" type="button">+ biểu trượng nhanh</button>
+</header>
+<input style="display:none;" type="file" id="fileup"/>
+<div id="filetab">
+			<div id="filebutton">
+			<button><a style="color:#9a9a9a" href="add.html">Mở/ Thêm</a></button><br>
+				<button onclick="return save()">Lưu</button><br>
+				<button class="blue" onclick="savefull();document.getElementById('filetab').style.width='0%';document.getElementById('headernew').style.top='-30px';">Tự động lưu cho lần này</button>
+<br>	<button  onclick="document.getElementById('fileup').click()">Nhập từ file</button> 
+				<br>	<button  onclick="return removedoc()">Xóa toàn bộ</button> 
+				<br>
+				<button onclick="document.getElementById('filetab').style.width='0%';document.getElementById('headernew').style.top='-30px';">Đóng</button>
+				
+			</div>
+			<div class="gioithieu" style="color:#fbfbfb;text-align:right">
+<center>
+				<img src="img/mtc.png">
+<p style="font-family:sans">Tác giả: Trần Mạnh Cường
+<br>K29A1-Trường THPT Anh Sơn 2, Nghệ An</p> 
+</center>
+
+			</div>
+		</div>
+  <div id="wallselect">
+<a onclick="return windowclose('wallselect')" class="close">X</a>
+	<h2>Chọn hình nền có sẵn</h2>  
+	<img src="lib/documentbg.png" id="lib/documentbg.png" onclick="return nenmau(this)"/>
+        <img src="lib/note.jpg" id="lib/note.jpg" onclick="return nenmau(this)"/>
+        <img src="lib/giay.jpg" id="lib/giay.jpg" onclick="return nenmau(this)"/>
+      <img src="lib/i-love-typography-typography-hd-wallpaper-1920x1080-5363.jpg" id="lib/i-love-typography-typography-hd-wallpaper-1920x1080-5363.jpg" onclick="return nenmau(this)"/>
+<img src="lib/blue-circles-abstract-hd-wallpaper-1920x1080-39313.jpg" id="lib/blue-circles-abstract-hd-wallpaper-1920x1080-39313.jpg" onclick="return nenmau(this)"/>
+<img src="lib/Abstract-Yellow-Wallpaper3.jpg" id="lib/Abstract-Yellow-Wallpaper3.jpg" onclick="return nenmau(this)"/>
+<img src="lib/download-free-powerpoint-templates-backgrounds-36.jpg" id="lib/download-free-powerpoint-templates-backgrounds-36.jpg" onclick="return nenmau(this)"/>
+<img src="lib/354_example.jpg" id="lib/354_example.jpg" onclick="return nenmau(this)"/>
+<img src="lib/AMPPTP06.jpg" id="lib/AMPPTP06.jpg" onclick="return nenmau(this)"/>
+<img src="lib/RcG6q79ji.jpeg" id="lib/RcG6q79ji.jpeg" onclick="return nenmau(this)"/>
+<img src="lib/yellow-swirl.jpg" id="lib/yellow-swirl.jpg" onclick="return nenmau(this)"/>
+<img src="lib/microsoft-powerpoint-christmas-templates-wallpaper.jpg" id="lib/microsoft-powerpoint-christmas-templates-wallpaper.jpg" onclick="return nenmau(this)"/>
+	</div>
+<textarea id="b" data-theme="flatly" height="100%" id="noidung" class="summernote">abc</textarea>
+<!-- Modal -->
+<div class="modal fade" id="savefile" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Bạn có muốn ghi tệp</h4>
+      </div>
+      <div class="modal-body">
+       Tệp tin được lưu sẽ có thể được sử dụng trong các phần mềm hỗ trợ. Tệp tin bị loại bỏ các thẻ Javascript và một số tệp tin nhúng dạng đa phương tiện.  
+      </div>
+<div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" onclick="return savefile(doc+'.m3f',$('.summernote').code())" class="btn btn-warning">Lưu tệp</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<!-- Modal chen-->
+<div class="modal fade" id="chen" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Chèn nền</h4>
+      </div>
+      <div class="modal-body">
+       <div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">Hình nền</h3>
+  </div>
+		 <div class="panel-body">
+    <input onchange="return read<img(this)" type="file">
+  <div id="wall">
+<center><div id="imgpreview"></div>
+<button onclick="return bg<img(sessionStorage.reader<img)" id="savebg<img">Lưu</button>
+<button id="removebgwall" onclick="removebgwall()">Xoá hình nền cho tài liệu này</button>
+<br><br>
+<a onclick="return windowopen('wallselect')" href="#">Chọn từ mẫu</a> 
+hoặc <a href="#">đến thư viện hình ảnh</a> 
+</center>
+</div>
+  </div>
+</div>
+      </div>
+<div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+        </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<!-- Modal -->
+<div class="modal fade" id="chontemp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Chọn mẫu</h4>
+      </div>
+      <div class="modal-body">
+<div id="mau">
+       <img onclick="mau(localStorage.mauwiki)" src="img/mauwiki.png">
+<img onclick="mau(localStorage.maulichsinhnhat)" src="img/mausinhnhat.png">
+<img onclick="mau(localStorage.maulich)" src="img/maulich.jpg">
+</div>
+      </div>
+<div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+<!-- Modal chen-->
+<div class="modal fade" id="chennhac" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Chèn nền</h4>
+      </div>
+      <div class="modal-body">
+       <div class="panel panel-success">
+  <div class="panel-heading">
+    <h3 class="panel-title">Chọn url Soundcloud</h3>
+  </div>
+ <input id="idnhac" class="form-control" onclick="if(this.value=='VD:https://soundcloud.com/anychanh/quang-le-ve-dau-mai-toc-nguoi-thuong'){this.value=''}" id="focusedInput" type="text" value="VD:https://soundcloud.com/anychanh/quang-le-ve-dau-mai-toc-nguoi-thuong">
+		 <div class="panel-body">
+    
+</div>
+      </div>
+<div class="modal-footer">
+<button onclick="savenhac()" class="btn btn-warning">Lưu</button>
+<button onclick="savenhac()" class="btn btn-info">Xoá nhạc nền</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">ĐÓng</button>
+        </div>
+    </div>
+  </div>
+</div>
+<!-- Modal -->
+  <script type="text/javascript" src="js/index.js">
+</script>
+</body>
+</html>

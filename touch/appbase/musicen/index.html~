@@ -1,0 +1,294 @@
+<html>
+<meta charset="utf-8">
+	<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+<link rel="stylesheet" href="../mtcbase/css/animate.css">
+<body>
+<header>
+<h2 style="padding:4px;">Âm nhạc</h2>
+<audio id="audio" src="auldlangsyne.mp3">
+</header>
+<br><center>
+<img id="cd" src="img/cd.png"><br>
+<div id="loi"></div>
+</center>
+
+<div onclick="this.style.display='none';" id="laptool">
+<ul onclick="localStorage.lap='all'">Lặp toàn bộ</ul>
+<ul onclick="localStorage.lap='one'">Lặp từng bài</ul>
+<ul onclick="localStorage.lap='none'">Không lặp</ul>
+</div>
+
+<div id="moretool">
+<ul onclick="top.oppw()">Âm lượng</ul>
+<ul onclick="oppop('laptool')">Lặp</ul>
+</div>
+<div id="botbar">
+<span onclick="optool()" style="float:right;font-size:26px;font-weight:900;cursor:pointer;"><b>...</b></span>
+<div id="toolbar"><br>
+<span id="name" style="padding:6px">&nbsp;Bài hát - Ca sĩ</span>
+<img onclick="lui()" style="height:50px;left:0px;" src="img/lui.png"/>
+<img style="left:50%;transform:translate(-50%,-50%);" onclick="play()" id="playbtn" src="img/play.png"/>
+<img onclick="next()" style="height:50px;right:0;" src="img/tien.png"/>
+</div>
+<br><br>
+<input onchange="tua()" onmouseover="loadtime=setTimeout('setval()',1000)" onmouseout="clearTimeout(loadtime);" id="rangetime" value='0' min='0' max='100' style="width:100%;" type="range">
+<br>&nbsp;
+<span id="timeon" style="float:left;">00:00</span>
+<span id="timeend" style="float:right;">00:00</span>
+</div>
+<script src='js/js.js'>
+</script>
+<script>
+sessionStorage.setItem('link1','auldlangsyne.mp3');
+sessionStorage.setItem('name1','Auld Lang Syne - Boney M');
+sessionStorage.setItem('loi1',"case ((0<time)&&(time <=18)):loi('Auld Lang Syne - Boney M');break;case ((15<time)&&(time <=19)):loi('Should auld acquaintance be forgot,');break; case ((20<time)&&(time <=23)):loi('And never brought to mind?');break; case ((24<time)&&(time <=27)):loi('Should auld acquaintance be forgot');break; case ((28<time)&&(time <=31)):loi('And days of auld lang syne?');break; case ((15<time)&&(time <=19)):loi('Should auld acquaintance be forgot,');break; case ((20<time)&&(time <=23)):loi('And never brought to mind?');break; case ((24<time)&&(time <=27)):loi('Should auld acquaintance be forgot');break; case ((28<time)&&(time <=31)):loi('And days of auld lang syne?');break; case ((32<time)&&(time <=35)):loi('For auld lang syne, my dear,');break; case ((35<time)&&(time <=39)):loi('For auld lang syne,');break; case ((40<time)&&(time <=43)):loi('We&#39;ll take a cup o&#39; kindness yet');break; case ((44<time)&&(time <=47)):loi('For auld lang syne.');break; case ((50<time)&&(time <=54)):loi('We twa hae run aboot the braes');break; case ((54<time)&&(time <=57)):loi('And pou&#39;d the gowans fine;');break; case ((58<time)&&(time <=62)):loi('We&#39;ve wander&#39;d mony a weary foot');break; case ((63<time)&&(time <=65)):loi('Sing auld lang syne.');break; case ((66<time)&&(time <=69)):loi('We two hae paidled i&#39; the burn,');break; case ((70<time)&&(time <=73)):loi('Frae morning sun till dine');break; case ((74<time)&&(time <=77)):loi('But seas between us braid hae roar’d');break; case ((78<time)&&(time <=81)):loi('Sing auld lang syne.');break; case ((88<time)&&(time <=92)):loi('And here&#39;s a hand, my trusty friend,');break; case ((92<time)&&(time <=95)):loi('And gie&#39;s a hand o&#39; thine;');break; case ((97<time)&&(time <=100)):loi('We&#39;ll take a cup o&#39; kindness yet');break; case ((101<time)&&(time <=103)):loi('For auld lang syne.');break; case ((105<time)&&(time <=108)):loi('Should auld acquaintance be forgot,');break; case ((109<time)&&(time <=112)):loi('And never brought to mind?');break; case ((113<time)&&(time <=116)):loi('Should auld acquaintance be forgot');break; case ((117<time)&&(time <=120)):loi('And days of auld lang syne?');break; case ((121<time)&&(time <=125)):loi('For auld lang syne, my dear,');break; case ((125<time)&&(time <=128)):loi('For auld lang syne,');break; case ((130<time)&&(time <=133)):loi('We’ll take a cup o&#39; kindness yet');break; case ((133<time)&&(time <=136)):loi('For auld lang syne.');break; case ((137<time)&&(time <=141)):loi('For auld lang syne, my dear,');break; case ((141<time)&&(time <=144)):loi('For auld lang syne,');break; case ((146<time)&&(time <=149)):loi('We&#39;ll take a cup o&#39; kindness yet');break; case ((149<time)&&(time <=152)):loi('For auld lang syne.');");
+
+sessionStorage.setItem('link2','youhavegotafriend.mp3');
+sessionStorage.setItem('name2','You&#39;ve Got A Friend - Carole King');
+sessionStorage.setItem('loi2',"case ((0<time)&&(time <=13)):loi('You&#39;ve Got A Friend - Carole King');break;case ((9<time)&&(time <=14)):loi('When you&#39;re down and troubled');break; case ((15<time)&&(time <=19)):loi('And you need some loving care');break; case ((21<time)&&(time <=26)):loi('And nothinh, nothing is going right');break; case ((31<time)&&(time <=34)):loi('Close your eyes and think of me');break; case ((36<time)&&(time <=39)):loi('And soon I will be there');break; case ((41<time)&&(time <=47)):loi('To brighten up even your darkest night');break; case ((50<time)&&(time <=54)):loi('You just call out my name');break; case ((56<time)&&(time <=59)):loi('And you know wherever I am');break; case ((61<time)&&(time <=67)):loi('I&#39;ll come running to see you again');break; case ((71<time)&&(time <=75)):loi('Winter, spring, summer or fall');break; case ((76<time)&&(time <=79)):loi('All you have to do is call');break; case ((81<time)&&(time <=83)):loi('And I&#39;ll be there');break; case ((85<time)&&(time <=87)):loi('You&#39;ve got a friend');break; case ((95<time)&&(time <=99)):loi('If the sky above you');break; case ((100<time)&&(time <=103)):loi('Grows dark and full of clouds');break; case ((105<time)&&(time <=111)):loi('And that old north wind begins to blow');break; case ((115<time)&&(time <=118)):loi('Keep your head together');break; case ((120<time)&&(time <=124)):loi('And call my name out loud');break; case ((125<time)&&(time <=130)):loi('Soon you&#39;ll hear me knockin&#39; at your door');break; case ((134<time)&&(time <=137)):loi('You just call out my name');break; case ((139<time)&&(time <=142)):loi('And you know wherever I am');break; case ((143<time)&&(time <=144)):loi('I&#39;ll come runnin&#39;, runnin, yeah, yeah,');break; case ((148<time)&&(time <=149)):loi('to see you again');break; case ((154<time)&&(time <=157)):loi('Winter, spring, summer or fall');break; case ((159<time)&&(time <=162)):loi('All you have to do is call');break; case ((163<time)&&(time <=165)):loi('And I&#39;ll be there, yes I will');break; case ((168<time)&&(time <=170)):loi('Now ain&#39;t it good to know');break;");
+max=2;
+bai=1;
+document.getElementById('name').innerHTML=sessionStorage.getItem('name'+bai);
+function oppop(id){
+document.getElementById(id).style.display='block';
+document.getElementById('moretool').style.height='0';
+}
+function loi(loibh){
+document.getElementById('loi').innerHTML=loibh;
+if(localStorage.sub=='block'){
+if(sessionStorage.sub!='none'){
+top.document.getElementById('musicsub').style.display="block";
+if(loibh!=''){
+top.document.getElementById('musicsub').style.padding="6px";
+}else{
+top.document.getElementById('musicsub').style.padding="0px";
+}
+}
+}
+top.document.getElementById('musicsubin').innerHTML=loibh;
+}
+function timeconv(time){
+return Math.floor(time/60)+':'+Math.round((time-Math.floor(time/60)*60));
+}
+track=document.getElementById('audio');
+track.volume=localStorage.volume/100;
+setval();
+function setval(){
+if(track.currentTime>=track.duration){
+if(localStorage.lap=='one'){
+ onpause();
+ }
+if((localStorage.lap=='none')){ 
+ next();
+clearTimeout(loadtime);
+ onplay();
+ track.pause();
+ }
+ if(localStorage.lap=='all'){
+ next();
+ }
+}
+time=track.currentTime;
+eval("switch(true){"+sessionStorage.getItem('loi'+bai)+"break;default:loi('')}");
+document.getElementById('timeon').innerHTML=timeconv(track.currentTime);
+document.getElementById('rangetime').value=(track.currentTime/track.duration)*100;
+track.volume=localStorage.volume/100;
+loadtime=setTimeout("setval()",1000);
+}
+function tua(){
+track.currentTime=track.duration*(document.getElementById('rangetime').value/100);
+if(track.currentTime<=track.duration){
+ loadtime=setTimeout("setval()",1000);
+}
+}
+function play(){
+if(track.paused==true){
+track.play();
+onpause();
+}else{
+track.pause();
+onplay();
+}
+}
+
+function onplay(){
+document.getElementById('playbtn').src="img/play.png";
+document.getElementById('cd').style.animationName = "none";
+}
+function onpause(){
+document.getElementById('playbtn').src="img/pause.png";
+document.getElementById('cd').style.animationName ="spin";
+if(localStorage.sub=='block'){
+if(sessionStorage.sub!='none'){
+top.document.getElementById('musicsub').style.display="block";
+}else{
+top.document.getElementById('musicsub').style.display="none";
+}
+}
+}
+function optool(){
+if(document.getElementById('moretool').clientHeight<1){
+document.getElementById('moretool').style.height=document.getElementById('moretool').scrollHeight+"px";
+}else{
+document.getElementById('moretool').style.height='0';
+}
+}
+setTimeout(function(){
+document.getElementById('moretool').style.bottom=document.getElementById('botbar').clientHeight+'px';
+document.getElementById('timeend').innerText=timeconv(track.duration);
+},200);
+function opbai(){
+track.src=sessionStorage.getItem('link'+bai);
+onpause();
+setTimeout(function(){
+document.getElementById('timeend').innerText=timeconv(track.duration);
+},200);
+track.play();
+document.getElementById('playbtn').src="img/pause.png";
+document.getElementById('name').innerHTML=sessionStorage.getItem('name'+bai);
+}
+function next(){
+if(bai<max){
+bai++;
+opbai();
+}else{
+bai=1;
+opbai();
+}
+}
+
+function lui(){
+if(bai>1){
+bai--;
+opbai();
+}else{
+if(localStorage.lap=='all'){
+bai=max;
+opbai();
+}
+}
+}
+document.getElementById('name').innerHTML=sessionStorage.getItem('name'+bai);
+track.src=sessionStorage.getItem('link'+bai);
+</script>
+<style>
+*{
+padding:0;
+margin:0;
+font-family:arial;
+font-weight:100;
+color:#fbfbfb;
+}
+body{
+background:#769EA2;
+overflow-x:hidden;
+}
+header{
+width:100%;
+background:#449EA2;
+padding:6px 0 6px 0;
+box-shadow:1px 2px 2px #109EA2;
+}
+#cd{
+width:80%;
+max-width:300px;
+
+    animation-name: none;
+    animation-duration: 4000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+
+}
+#botbar{
+width:100%;
+bottom:0;
+position:fixed;
+background:#667D7F;
+}
+#toolbar{
+height:76px;
+background:#667D7F;
+}
+#toolbar img{
+height:65px;
+position:absolute;
+padding:6px;
+top:0;
+top:50%;
+left:auto;
+transform:translateY(-50%);
+border-radius:100%;
+}
+#toolbar img:hover{
+background:#fbfbfb;
+transition:0.5s;
+}
+
+
+#moretool{
+background:#fbfbfb;
+height:0;
+box-shadow:-1px -1px 0.5px #cfcfcf;
+position:fixed;
+right:0;
+border-radius:1px 0 0 1px;
+transition:0.25s;
+overflow:hidden;
+}
+ul{
+color:#333;
+padding:7px;
+border-bottom:1px solid #cfcfcf;
+}
+ul:hover{
+color:#fff;
+background:#999;
+transition:0.5s;
+cursor:pointer;
+}
+#laptool{
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+padding:0;
+background:#fbfbfb;
+box-shadow:1px 1px 2px #eee;
+display:none;
+}
+#laptool ul{
+padding:20px;
+}
+#rangetime{
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+   height: 10px;
+  margin: 0;
+  border: none;
+  background: #232528;
+  box-shadow: inset 0 1px 0 0 #0d0e0f, inset 0 -1px 0 0 #3a3d42;
+  -webkit-box-shadow: inset 0 1px 0 0 #0d0e0f, inset 0 -1px 0 0 #3a3d42;
+  outline: none; /* no focus outline */
+}
+#rangetime::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 22px;
+  height: 16px;
+  border: none;
+  border-radius: 12px;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #529de1), color-stop(100%, #245e8f)); /* android <= 2.2 */
+  background-image: -webkit-linear-gradient(top , #529de1 0, #245e8f 100%); /* older mobile safari and android > 2.2 */;
+  background-image: linear-gradient(to bottom, #529de1 0, #245e8f 100%); /* W3C */
+}
+</style>
+</body>
+</html>

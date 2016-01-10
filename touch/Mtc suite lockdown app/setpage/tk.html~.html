@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport"/>
+	<link rel="stylesheet" href="css/animate.min.css">
+<link rel="stylesheet" type="text/css" href="../app base/mtcbase/css/index.css" />
+	<title>Hello World</title>
+  </head>
+  <body>
+ <h2>Tên tài khoản:</h2>
+	<center><input id="range" type="text"></input></center>
+<h2>Email:</h2>
+<center><input id="email" type="email"></center>
+<h2>Vị trí:</h2>
+<center>
+<select id="vitri">
+<option>-Lựa chọn vị trí của bạn-</option>
+<option value="hanoi">Hà Nội</option>
+<option value="nghean">Nghệ An</option>
+<option value="saigon">Tp. Hồ Chí Minh</option>
+</select>
+<center>
+<button onclick="save()">Lưu thông tin</button>
+<script>
+document.getElementById('ten').value=localStorage.acname;
+document.getElementById('email').value=localStorage.acmail;
+document.getElementById('vitri').value=localStorage.vitri;
+function save(){
+localStorage.acname=document.getElementById('ten').value;
+localStorage.acmail=document.getElementById('email').value;
+localStorage.vitri=document.getElementById('vitri').value;
+toastShow('Xong');
+}
+</script>
+<style>
+*{
+margin:0;
+font-family:arial;
+font-weight:100;
+color:#555;
+padding:6px;
+}
+h2{
+
+}
+input{
+border:solid 0px #999;
+border-radius:3px;
+box-shadow:0px 1px 3px #666;
+width:80%;
+background:#eee;
+font-size:18px;
+padding:8px;
+}
+select{
+border:solid 0px #999;
+border-radius:0 10px 0 10px;
+box-shadow:0px 1px 3px #666;
+width:80%;
+background:#eee;
+font-size:18px;
+padding:8px;
+}
+button{
+margin:3px;
+box-shadow:0px 1px 3px #666;
+border:none;
+font-size:20px;
+background:#eee;
+}
+</style>
+<script src="../app base/mtcbase/js/index.js"></script>
+  </body>
+  </html>

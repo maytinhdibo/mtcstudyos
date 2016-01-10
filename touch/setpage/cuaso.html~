@@ -1,0 +1,38 @@
+﻿<label class="switch">
+    <input onchange="hieuungchange()" id="hieuung" type="checkbox">
+    <span class="check"></span>
+</label>
+Bật hiệu ứng động
+<p><h5>Sử dụng các hiệu ứng chuyển đổi cho các cửa sổ khi thu nhỏ, đóng, và xuất hiện</h5></p>
+
+<label class="switch">
+    <input id="chiacuasotrue" onchange="localStorage.chiacuasotrue=this.checked;top.chiacuaso()" type="checkbox">
+    <span class="check"></span>
+</label>
+Tùy chọn chia màn hình ở 2 cạnh
+<p><h5>Rê chuột từ đầu cửa sổ đến 2 mép màn hình để chia đôi màn hình
+<script>
+if(localStorage.chiacuasotrue=='false'){
+document.getElementById('chiacuasotrue').checked=false;
+}else{
+document.getElementById('chiacuasotrue').checked=true;
+}
+
+if(localStorage.animatedzoomOutDown=='null'){
+document.getElementById('hieuung').checked=false;
+}else{
+document.getElementById('hieuung').checked=true;
+}
+
+function hieuungchange(){
+if(document.getElementById('hieuung').checked==true){
+localStorage.animatedzoomOutDown='animated zoomOutDown';
+localStorage.animatedzoomOutLeft='animated zoomOutLeft';
+localStorage.animatedrollIn='animated rollIn';
+}else{
+localStorage.animatedzoomOutDown=null;
+localStorage.animatedzoomOutLeft=null;
+localStorage.animatedrollIn=null;
+}
+}
+</script>

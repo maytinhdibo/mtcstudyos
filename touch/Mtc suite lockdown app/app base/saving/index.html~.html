@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Hello World</title>
+    </head>
+    <body>
+		<script>
+	if(localStorage.getItem('lang')==null){
+	location.href="setlang.html";
+	}
+	if(localStorage.getItem('lang')=='en'){
+	location.href="indes.html";
+	}	
+setTimeout('run()',4000);
+	function run(){
+
+location.href=localStorage.getItem('lang')+'.html';
+	}
+			</script>
+		<center>	
+			<div style="margin-top:10%;height:60%">	
+		<h0>Quản lí ngân sách</h0>
+		 <h4>Một cách hợp lí cho con trẻ, và cho chính bạn<br>
+			 <b>Sản phẩm dựa trên tiêu chuẩn của Quỹ Quốc gia cho Giáo dục tài chính Mĩ</b>
+			 </h4>
+		</div>
+		<footer>
+			<h5>
+		 v1.1 (Mtcsuite lookdownapp)<br>
+			© Mtc,2015
+			</h5>
+		</footer>
+		</center>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>

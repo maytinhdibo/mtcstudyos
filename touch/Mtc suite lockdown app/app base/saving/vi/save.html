@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" type="text/css" href="../css/index.css" />
+        <title>Hello World</title>
+    </head>
+    <body>
+<style>
+			.number{
+ width:10%
+	}
+ .gia{
+ width:80%
+ }
+ input{
+  width:100%;
+ }
+</style>	
+		<marquee behavior="slide" scrollamount="150" >
+	<h1>	<img src="../img/back.png" height="50px" onclick="history.go(-1)"/>
+				Dự án tiết kiệm tiền </h1></marquee>
+				<br><h3>
+					<h2>Bạn định mua:</h2>
+<input type="text" id="save_name" onclick="document.getElementById('save_name').value=''" value="Chưa nhập mặt hàng"/>
+					<h2>Với số lượng và giá thành:</h2>
+				<center>	<input type="number" class="number" id="save_number"/>
+					<input type="number" class="gia" id="save_gia" />	
+					<button onclick="return save()">Tạo</button>
+			<div id="vi"/>
+				</center> </h3>
+	   <script type="text/javascript" src="../js/index.js"></script>
+    </body>
+</html>

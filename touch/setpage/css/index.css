@@ -1,0 +1,151 @@
+ul,li{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+html, body
+{
+    height: 100%;
+}
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+}
+
+input{
+    border: 1px solid #ccc;
+    font-size: 16px;
+    margin: 5px;
+    outline: 0 none;
+    padding: 7px 5px;
+}
+
+/* Menu thanh trái */
+
+#menu{
+    float:left;
+    background: #444;
+    color:white;
+    width:350px;
+    height: 100%;
+    border-right: 1px solid #333;
+}
+
+#menu li{
+    padding: 15px;
+    padding-left: 30px;
+}
+
+#menu li:hover{
+    background-color: #555;
+}
+
+#menu li.select{
+    background-color: #333;
+}
+
+/* Frame */
+
+#frame{
+    margin-left: 360px;
+    height: 95%;
+    padding: 15px;
+    overflow-y: scroll;
+}
+
+div.input #label{
+    font-size: 22px;
+}
+
+div.input input,div.input select{
+    margin: 10px 5px;
+    width: 600px;
+}
+
+/** Cá nhân hóa **/
+div.input{
+
+}
+div.input .upload {
+    width:250px;
+    position: relative;
+    overflow: hidden;
+    margin: 10px;
+    padding: 5px;
+    border:solid 2px #999;
+}
+div.input .upload:hover{
+    border-color:#777;
+}
+div.input .upload:active{
+    transition:0.05s;
+    background:#777;
+    color:#eee;
+}
+div.input .upload input{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+div.input #hinhnen{
+    width:100%;
+    border-radius:3px;
+    box-shadow:0px 1px 3px #666;  
+    margin: auto;
+}
+
+div.input #anhdaidien{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    box-shadow:0px 1px 3px #666;
+    background-size:cover;
+    padding:0;
+    margin: auto;
+}
+
+div.input#avatar{
+    text-align: center;
+    float: left;
+}
+
+div.input#background{
+    width:50%;
+    float: right;
+    margin: auto;
+    margin-right: 15px;
+}
+
+/* About us */
+
+div#about h2{
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding-bottom: 5px;
+    text-align: center
+}
+
+div#about #content{
+    padding-left: 20px;
+    line-height: 20px;
+}
+
+div#about #content li{
+    list-style: circle;
+    margin-left: 20px;
+}
+
+
+div#about #content a{
+    text-decoration: none;
+}

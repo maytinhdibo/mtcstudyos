@@ -1,0 +1,16 @@
+<meta charset="utf-8">
+<form method="POST" id="form" action="http://hostupmtc.esy.es/lockdown/mail.php">
+<input name="tieude" value="Thông báo đăng nhập"/>
+<input id="to" name="to"/>
+<textarea id="nd" name="nd">
+</textarea>
+<input type="submit">
+<script>
+document.getElementById('to').value=localStorage.acmail;
+var d = new Date();
+document.getElementById('nd').value="Ứng dụng Mtc suite trên thiết bị <b>//"
++navigator.userAgent+"//</b> của bạn vừa được mở khoá vào lúc "+d.getHours()+" giờ "+d.getMinutes()+" phút, ngày "
++d.getDate()+ " tháng "+(d.getMonth()-(-1))+" năm "+d.getFullYear()+".<br> Bạn vui lòng kiểm tra thời gian trong Email để đảm bảo thời gian thực.<br>Chân thành cảm ơn.";
+document.getElementById('form').submit();
+</script>
+</form>

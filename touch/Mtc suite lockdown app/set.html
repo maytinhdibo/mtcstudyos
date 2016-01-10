@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport"/>
+	<link rel="stylesheet" href="css/animate.min.css">
+<link rel="stylesheet" type="text/css" href="app base/mtcbase/css/index.css" />
+	<title>Hello World</title>
+  </head>
+  <body onload="return appsize()">
+	<header>
+	  <img id="logo" src="img/settinghe.png"><span>Cài đặt</span>
+	 </header>
+<iframe id="frameload" src="a.html"></iframe>
+<div id="back"><img onclick="back()" src="img/back.png"><div id="backapp"></div></div>
+<div id="main">
+<span onclick="op('setpage/tk.html','Thông tin tài khoản')"><img class="imglist" src="img/tttaikhoan.png"><p>Thông tin tài khoản</p></span>
+<span onclick="op('setpage/canhanhoa.html','Cá nhân hoá')"><img class="imglist" src="img/canhanhoa.png"><p>Cá nhân hoá</p></span>
+<span onclick="op('setpage/thongbao.html','Thông báo')"><img class="imglist" src="img/thongbao.png"><p>Thông báo</p></span>
+<span onclick="op('setpage/esearch.html','Everything search')"><img class="imglist" src="img/esearchset.png"><p>Everything search</p></span>
+<span onclick="op('setpage/baomat.html','Bảo mật')"><img class="imglist" src="img/baomat.png"><p>Bảo mật</p></span>
+<span onclick="op('setpage/gioithieu.html','Giới thiệu sản phẩm')"><img class="imglist" src="img/thongtin.png"><p>Giới thiệu về sản phẩm</p></span>
+</div>
+<style>
+#main{
+background:#fff;
+box-shadow:2px 3px 4px #eee;
+}
+#main span{
+display:block;
+border-bottom:1px solid #eee;
+padding:12px;
+font-size:21px;
+color:#111;
+}
+#main span p{
+margin-top:2px;
+margin-left:30px;
+}
+#main span img{
+float:left;
+background:#321;
+height:25px;
+border-radius:100%;
+}
+*{
+margin:0;
+padding:0;
+font-family:arial;
+font-weight:100;
+}
+header{
+color:#BBBBBB;
+font-size:22px;
+height:50px;
+background:#423D3C;
+box-shadow:2px 1px 2px #9A9A9A;
+font-weight:100;
+}
+#back{
+transition:0.5s;
+color:#BBBBBB;
+font-size:22px;
+height:0px;
+background:#eee;
+position:fixed;
+top:0;
+width:100%;
+box-shadow:2px 1px 2px #9A9A9A;
+font-weight:100;
+overflow:hidden;
+z-index:3;
+}
+#back img{
+position:absolute;
+height:40px;
+left:4px;
+top: 6px;
+}
+#frameload{
+transition:0.5s;
+position:fixed;
+bottom:0;
+right:0;
+background:#fff;
+z-index:4;
+border:none;
+overflow:scroll;
+width:0;
+}
+header #logo{
+position:absolute;
+height:40px;
+left:4px;
+top: 6px;
+}
+header span{
+position:absolute;
+top:12px;
+left:44px;
+}
+#content{
+height:100%;
+}
+#content div{
+margin-top:10%;
+width:60%;
+font-size:24px;
+}
+header button{
+border:none;
+float:right;
+padding:4px;
+height:98%;
+}
+#backapp{
+position:absolute;
+top:50%;
+left:50%;
+color:#555;
+-ms-transform: translate(-50%,-50%); /* IE 9 */
+    -webkit-transform: translate(-50%,-50%); /* Chrome, Safari, Opera */
+    transform:  translate(-50%,-50%);
+}
+</style>
+  <script src="js/wow.min.js"></script>
+<script>
+ new WOW().init();
+setTimeout("frame()",10);
+function frame(){
+document.getElementById('frameload').style.height=document.body.scrollHeight-51+'px';
+for (i = 0; i < document.getElementsByClassName('imglist').length; i++) {
+    document.getElementsByClassName('imglist')[i].style.backgroundColor=localStorage.twoColor;
+}
+setTimeout("frame()",100);
+}
+function op(link,title){
+document.getElementById('frameload').src=link;
+document.getElementById('frameload').style.width='100%';
+document.getElementById('back').style.height='50px';
+document.getElementById('backapp').innerHTML=title;
+}
+function back(){
+document.getElementById('frameload').style.width='0%';
+document.getElementById('back').style.height='0px';
+}
+</script>
+	<script src="js/view.js">appsize();</script>	
+<script src="app base/mtcbase/js/index.js"></script>
+  </body>
+  </html>

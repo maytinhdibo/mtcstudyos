@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="viewport"/>
+       <link rel="stylesheet" href="../mtcbase/css/index.css">
+	<link rel="stylesheet" href="../../css/animate.min.css">
+	<title>Hello World</title>
+  </head>
+  <body>
+	<header>
+	 <img id="logo" src="img/icon.png"> <span>Life of day</span>
+	  <img src="../base img/listiconblack.png" id='listicon' onclick="return openlist();" style="float:right"/>
+	 </header>
+ <div style="width:0px;" id="list">
+	<img style="position:absolute;" src="../base img/right.png" onclick="return openlist();"/>
+<img src="img/cover.png" style="width:100%"/>
+<br>
+<center>
+<div id="avatar"></div>
+<div style="height:50px"></div>
+<span id="acname"></span><br><br><br>
+<p style="text-align:left;padding:6px;"><i style="font-weight:900">"Life of day là ứng dụng viết nhật kí theo dạng timeline, ứng dụng này nằm trong bản bổ sung của sản phẩm Mtcsuite lockdownapp."</i></p>
+<b style="position:absolute;bottom:5px;left:50%;-webkit-transform:translate(-50%,-50%);">© Mtc, 2015</b>
+</center>
+	 </div>
+<center>
+	 <div id="main"></div>
+</center>
+<div id="bottom">
+<div id="toolbr">
+<span class="wow bounceInRight" data-wow-duration="2s">
+<img onclick="share(document.getElementById('post').value)" src="img/fb.png">
+<img onclick="twitter(document.getElementById('post').value)" src="img/twitter.png">
+<img onclick="img()" id="imgbtn" src="img/img.png">
+<img onclick="bieutuong()" src="img/aicon.png">
+</span>
+</div>
+<textarea id="post" onclick="if(this.value=='Nhập trạng thái của bạn'){this.value=''};this.style.width='94%';this.style.height='150px';document.getElementById('huy').style.display='block';" value="Nhập trạng thái của bạn">Nhập trạng thái của bạn</textarea>
+<button onclick="post(document.getElementById('post').value)"><img src="../base img/send.png"></button> 
+<button onclick="huy()" id="huy">Huỷ</button>
+</div>
+<div id="popup">
+<span onclick="closepopup()" style="float:right"><h2>X</h2></span>
+<div id="popupinner">
+</div>
+<input onchange="imgc()" style="display:none;" type="file" id="imgfile"/>
+</div>
+<script>
+document.getElementById('avatar').style.backgroundImage="url('"+localStorage.anhdaidien+"')";
+document.getElementById('main').style.background=localStorage.twoColor;
+document.getElementById('logo').style.background=localStorage.oneColor;
+document.getElementById('acname').innerText=localStorage.acname;
+if(localStorage.postlife==null){
+localStorage.postlife='';
+}
+if(localStorage.oldyr!=(new Date().getFullYear())){
+localStorage.oldyr=new Date().getFullYear();
+localStorage.postlife='<span class=year>'+new Date().getFullYear()+'</span>'+localStorage.postlife;
+}
+sessionStorage.img='null';
+document.getElementById('main').innerHTML=localStorage.postlife;
+function openlist(){
+if(document.getElementById('list').style.width!='0px'){
+document.getElementById('list').style.width='0px';
+document.getElementById('listicon').style.webkitTransform='rotate(0)';
+}else{
+window.scrollTo(0,0);
+document.getElementById('list').style.width='50%';
+document.getElementById('listicon').style.webkitTransform='rotate(252.5deg)';
+}
+}
+function post(ct){
+if(sessionStorage.img!='null'){
+sessionStorage.img="<center><img src='"+sessionStorage.img+"'></center>";
+}else{
+sessionStorage.img='';
+}
+var d = new Date();
+time="'"+d.getHours()+' giờ '+d.getMinutes()+' phút, ngày '
++d.getDate()+ ' tháng '+(d.getMonth()-(-1))+' năm '+d.getFullYear()+"'";
+localStorage.postlife='<div onclick="toshare(this.innerText,'+time+')" class="div">'+ct+sessionStorage.img+'</div>'+localStorage.postlife;
+document.getElementById('main').innerHTML=localStorage.postlife;
+document.getElementById('imgbtn').style.borderTop='2px solid #fff';
+document.getElementById('post').value="Nhập trạng thái của bạn";
+document.getElementById('post').style.width='80%';
+document.getElementById('post').style.height='40px';
+document.getElementById('huy').style.display='none';
+sessionStorage.img='null';
+}
+function share(mpost){
+post(mpost);
+window.open('https://www.facebook.com/sharer/sharer.php?u=http://hostupmtc.esy.es/life/post.html%23'+mpost);
+}
+function closepopup(){
+document.getElementById('popup').style.height="0";
+}
+function oppopup(inner){
+document.getElementById('popup').style.height="60%";
+document.getElementById('popupinner').innerHTML=inner;
+}
+function bieutuong(){
+a='<span class="matcuoi" class="matcuoi" onclick=addicon(this.innerText)>😀</span> <span class="matcuoi" onclick=addicon(this.innerText)>😁</span> <span class="matcuoi" onclick=addicon(this.innerText)>😂</span> <span class="matcuoi" onclick=addicon(this.innerText)>😃</span> <span class="matcuoi" onclick=addicon(this.innerText)>😄</span> <span class="matcuoi" onclick=addicon(this.innerText)>😅</span> <span class="matcuoi" onclick=addicon(this.innerText)>😆</span> <span class="matcuoi" onclick=addicon(this.innerText)>😇</span> <span class="matcuoi" onclick=addicon(this.innerText)>😈</span> <span class="matcuoi" onclick=addicon(this.innerText)>😉</span> <span class="matcuoi" onclick=addicon(this.innerText)>😊</span> <span class="matcuoi" onclick=addicon(this.innerText)>☺️</span> <span class="matcuoi" onclick=addicon(this.innerText)>😋</span> <span class="matcuoi" onclick=addicon(this.innerText)>😌</span> <span class="matcuoi" onclick=addicon(this.innerText)>😍</span> <span class="matcuoi" onclick=addicon(this.innerText)>😎</span> <span class="matcuoi" onclick=addicon(this.innerText)>😏</span> <span class="matcuoi" onclick=addicon(this.innerText)>😐</span> <span class="matcuoi" onclick=addicon(this.innerText)>😑</span> <span class="matcuoi" onclick=addicon(this.innerText)>😒</span> <span class="matcuoi" onclick=addicon(this.innerText)>😓</span> <span class="matcuoi" onclick=addicon(this.innerText)>😔</span> <span class="matcuoi" onclick=addicon(this.innerText)>😕</span> <span class="matcuoi" onclick=addicon(this.innerText)>😖</span> <span class="matcuoi" onclick=addicon(this.innerText)>😗</span> <span class="matcuoi" onclick=addicon(this.innerText)>😘</span> <span class="matcuoi" onclick=addicon(this.innerText)>😚</span> <span class="matcuoi" onclick=addicon(this.innerText)>😛</span> <span class="matcuoi" onclick=addicon(this.innerText)>😜</span> <span class="matcuoi" onclick=addicon(this.innerText)>😝</span> <span class="matcuoi" onclick=addicon(this.innerText)>😞</span> <span class="matcuoi" onclick=addicon(this.innerText)>😟</span> <span class="matcuoi" onclick=addicon(this.innerText)>😠</span> <span class="matcuoi" onclick=addicon(this.innerText)>😡</span> <span class="matcuoi" onclick=addicon(this.innerText)>😢</span> <span class="matcuoi" onclick=addicon(this.innerText)>😣</span> <span class="matcuoi" onclick=addicon(this.innerText)>😥</span> <span class="matcuoi" onclick=addicon(this.innerText)>😦</span> <span class="matcuoi" onclick=addicon(this.innerText)>😧</span> <span class="matcuoi" onclick=addicon(this.innerText)>😨</span> <span class="matcuoi" onclick=addicon(this.innerText)>😩</span> <span class="matcuoi" onclick=addicon(this.innerText)>😪</span> <span class="matcuoi" onclick=addicon(this.innerText)>😫</span> <span class="matcuoi" onclick=addicon(this.innerText)>😭</span> <span class="matcuoi" onclick=addicon(this.innerText)>😮</span> <span class="matcuoi" onclick=addicon(this.innerText)>😯</span> <span class="matcuoi" onclick=addicon(this.innerText)>😰</span> <span class="matcuoi" onclick=addicon(this.innerText)>😱</span> <span class="matcuoi" onclick=addicon(this.innerText)>😲</span> <span class="matcuoi" onclick=addicon(this.innerText)>😳</span> <span class="matcuoi" onclick=addicon(this.innerText)>😴</span> <span class="matcuoi" onclick=addicon(this.innerText)>😵</span> <span class="matcuoi" onclick=addicon(this.innerText)>😶</span> <span class="matcuoi" onclick=addicon(this.innerText)>😷 </span>';
+oppopup(a)
+}
+function img(){
+a='<center><button style=float:none; onclick=document.getElementById("imgfile").click() ><img src=img/imgicon.png></button><br><img id=preview><button style=display:none; id=saveimg onclick=saveimg()>Lưu</button></center>';
+oppopup(a);
+}
+function saveimg(){
+sessionStorage.img=document.getElementById('preview').src;
+document.getElementById('imgbtn').style.borderTopColor=localStorage.oneColor;
+closepopup();
+}
+function huy(){
+document.getElementById('post').value="Nhập trạng thái của bạn";
+document.getElementById('post').style.width='80%';
+document.getElementById('post').style.height='40px';
+document.getElementById('huy').style.display='none';
+}
+function toshare(ct,time){
+sessionStorage.slite=ct;
+a='<br><br><div onclick="fbslite(sessionStorage.slite)" class="shareli"><img src="img/fb.png"> Chia sẻ lên Facebook</div><div onclick="twitterslite(sessionStorage.slite)" class="shareli"><img src="img/twitter.png"> Chia sẻ lên Twitter</div><br><br><h6 style="float:right">Bài viết này được đăng lúc: '+time;
+oppopup(a);
+}
+function fbslite(post){
+window.open('https://www.facebook.com/sharer/sharer.php?u=http://hostupmtc.esy.es/life/post.html%23'+post);
+}
+function twitterslite(post){
+window.open('https://twitter.com/home?status='+post);
+}
+function addicon(icon){
+document.getElementById('post').value=document.getElementById('post').value+icon
+closepopup();
+}
+//file
+function imgc(){
+var file = document.getElementById("imgfile").files[0];
+var imageType = /image.*/;
+
+if (file.type.match(imageType)) {
+  var reader = new FileReader();
+
+  reader.onload = function(e) {
+    document.getElementById('preview').src = reader.result;
+document.getElementById('saveimg').style.display="block";
+  }
+
+  reader.readAsDataURL(file); 
+} else {
+  alert('Tệp tin không được hỗ trợ');
+}
+}
+function twitter(mpost){
+post(mpost);
+window.open('https://twitter.com/home?status='+mpost);
+}
+</script>
+<style>
+#list center #avatar{
+width:70px;
+height:70px;
+border-radius:50%;
+padding:3px;
+box-shadow:0.3px 1px 3px #1d1d1d;
+background-size:cover;
+margin-bottom:4px;
+position:absolute;
+left:50%;
+-webkit-transform:translate(-50%,-50%);
+}
+#main img{
+max-width:70%;
+}
+#preview{
+max-width:70%;
+}
+#main span{
+color:#eee;
+}
+
+.shareli{
+padding:6px;
+border-bottom:1px solid #cfcfcf;
+}
+#toolbr img{
+height:25px;
+padding:3px;
+}
+#main img{
+max-width:70%;
+}
+#imgbtn{
+border-top:2px solid #fff;
+border-top-color:none;
+}
+#popup{
+position:fixed;
+bottom:0;
+transition:0.5s;
+width:100%;
+height:0;
+background:#eee;
+box-shadow:0px -2px 5px #bbb;
+color:#555;
+overflow-y:scroll;
+}
+#popup span{
+padding:4px;
+}
+#bottom{
+transition:0.5s;
+position:fixed;
+bottom:0;
+background:#fbfbfb;
+box-shadow:1px -2px 3px #777;
+width:100%;
+}
+#main .year{
+display:block;
+width:100%;
+text-align:center;
+padding-top:7px;
+padding-bottom:7px;
+margin-top:9px;
+margin-bottom:9px;
+border-top:solid 1px rgba(39, 44, 44, 0.8);
+border-bottom:solid 1px rgba(39, 44, 44, 0.8);
+}
+.matcuoi{
+font-size:30px;
+margin:2px;
+}
+#main{
+position:fixed;
+top:50px;
+width:100%;
+background:#344;
+bottom:85px;
+overflow-x:hidden;
+overflow-y:scroll;
+}
+#main .div{
+padding:6px;
+background:#fbfbfb;
+color:#484848;
+border-radius:4px;
+box-shadow:1px 2px 3px #9a9a9a;
+border:1px solid #cfcfcf;
+width:95%;
+text-align:left;
+margin:3px;
+}
+#headernof{
+width:100%;
+padding:6px;
+background:#fbfbfb;
+box-shadow:#1d1d1d;
+}
+*{
+margin:0;
+padding:0;
+font-family:'HelveticaNeue-Light', 'HelveticaNeue', Helvetica, Arial, sans-serif;
+font-weight:100;
+color:#444;
+}
+body{
+background:#145983;
+}
+h2{
+color:#1d1d1d;
+}
+#list a, a:hover{ 
+text-decoration:none; 
+}
+#list{
+position:fixed;
+transition:width 0.7s;
+height:100%;
+top:0;
+z-index:3;
+background:#fbfbfb;
+width:50%;
+right:0;
+overflow:hidden;
+box-shadow:0px -2px 8px #666;
+}
+#list a  div{
+padding:6px;
+background:#555;
+color:#fbfbfb;
+width:100%;
+}
+header{
+position:fixed;
+top:0px;
+width:100%;
+color:#999;
+font-size:22px;
+height:50px;
+background:#fbfbfb;
+box-shadow:2px 1px 2px #9A9A9A;
+font-weight:100;
+}
+header #logo{
+position:absolute;
+height:38px;
+left:4px;
+top:6px;
+}
+header span{
+position:absolute;
+top:12px;
+left:48px;
+}
+header img{
+position:absolute;
+transition:1s;
+font-weight:900;
+height:35px;
+top:8px;
+right:4px;
+}
+textarea{
+transition:height 0.8s;
+padding:6px;
+width:80%;
+border: none;
+font-size:20px;
+height:40px;
+color: #5f5f5f;
+}
+button{
+width:15%;
+float:right;
+height:90%;
+margin-top:3px;
+color:#fbfbfb;
+border:none;
+padding:6px;
+border-radius:5px;
+}
+#huy{
+background:#fff;
+color:#444;
+font-size:22px;
+float:right;
+display:none;
+}
+header button{
+border:none;
+float:right;
+padding:4px;
+height:98%;
+}
+#taisukien{
+background:#fbfbfb;
+box-shadow:2px 3px 4px #eee;
+text-align:left;
+padding:6px;
+width:80%;
+}
+#thongbao img{
+height:50px;
+border:2px solid #1d1d1d;
+}
+#thongbao div{
+background:#fff;
+box-shadow:2px 3px 4px #777;
+transition:1s;
+text-align:left;
+margin-top:2px;
+border-radius:4px;
+padding:6px;
+width:95%;
+}
+#thongbao .mini{
+float:right;
+text-algin:right;
+font-size:12px;
+}
+#countnof{
+padding:4px;
+ background:#d9534f;
+ border-radius:3px;
+ color:#fbfbfb;
+ box-shadow:1px 0px #B0514B;
+}
+#countnof a{
+float:right;
+}
+</style>
+<style id="style">
+
+</style>
+	<script src="../mtcbase/js/index.js"></script>	
+   <script src="../../js/wow.min.js"></script>
+     <script>
+document.getElementById('style').innerHTML="button{background:"+localStorage.oneColor+";}";
+        new WOW().init();
+         </script>
+  </body>
+  </html>

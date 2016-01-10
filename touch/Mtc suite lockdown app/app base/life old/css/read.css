@@ -1,0 +1,52 @@
+#mtc_boot_loader{
+ background:#343953;
+ top:0;
+  -webkit-transition: all 1s linear;  
+ width:100%;
+ height:100%;
+ opacity:1;
+ transition-duration:2s;
+ z-index:235;
+ position:absolute;
+}
+#mtc_boot_loader div{
+background:#F22709;
+width:70%;
+margin-top:10%;
+margin-left:13%;
+padding:5px;
+box-shadow:4px 9px 1px #000;
+}
+#worker div{
+border-radius:6px;
+width:93%;
+text-align:left;
+margin:10px;
+padding:5px;
+}
+#worker div img{
+max-width:75%;
+max-height:40%;
+padding:3px;
+margin:2px;
+text-align: center;
+border:3px solid #fbfbfb;
+box-shadow:1px 1px 1px 1px #808181;
+border-radius:2px;
+display:block;
+    margin-left: auto;
+    margin-right: auto;
+}
+bg-blue div{
+background:#7D7CBF;
+box-shadow:1px 2px 3px #484D7C;
+border:1px solid #7DB5DF;
+color:#fbfbfb;
+}
+bg-white div{
+background:#fbfbfb;
+color:#484848;
+box-shadow:1px 2px 3px #9a9a9a;
+border:1px solid #cfcfcf;
+}
+

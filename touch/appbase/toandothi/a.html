@@ -1,0 +1,163 @@
+<html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../mtcbase/css/animate.css">
+<body>
+<canvas id="myCanvas" width="840" height="540" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+<div id="tool">
+<div class="header">
+<div id="toolbtn" onclick="optool()">
+...
+</div>
+<div id="hisbtn" onclick="opkq('his')">
+<img height="22px" src="img/his.png">
+</div>
+<div id="infobtn" onclick="optool()">
+?
+</div>
+<div id="infobtn" onclick="clean()">
+<img height="22px" src="img/clean.png">
+</div>
+Công cụ phương trình và đồ thị</div>
+<div id="display">
+<center>
+<select onchange="load(this.value)">
+<option value='def'>Vẽ phương trình</option>
+<option value='bacnhat'>Giải và phân tích phương trình bậc nhất</option>
+<option value='bac2'>Giải và phân tích phương trình bậc hai</option>
+<option value='2an'>Giải và phân tích hệ p.trình bậc nhất 2 ẩn</option>
+<option>Giải và phân tích hệ p.trình bậc nhất 3 ẩn</option>
+<option>Giải và phân tích hệ p.trình đường thẳng và paralbol (1 p.trình bậc nhất và 1 p,trình bậc 2)</option>
+<select>
+<div id="frame">
+<div style="padding:3px">
+Phương trình cần vẽ đồ thị:
+(VD:(1/999)*x^5-14*x+10)
+</div>
+<br>f(x):<input id="pt" type="phuongtrinh"/>
+<button onclick="runpt(document.getElementById('pt').value)">Vẽ đồ thị</button>
+</center>
+</div>
+</div>
+
+</div>
+<div id="kq">
+<span onclick="clokq()" class="clokqbtn">X</span>
+<div id="kqdis"> </div>
+</div>
+<input id="wikilink" style="display:none;">
+<span style="display:none;" id="wiki"><span onclick="top.opapp('Wikipedia',document.getElementById('wikilink').value,'img/wiki50.png','#fbfbfb')">Tìm hiểu thêm</span></span> 
+<script>
+function optool(){
+if(document.getElementById('display').clientHeight>10){
+document.getElementById('display').style.height="0";
+}else{
+document.getElementById('display').style.height="500px";
+}
+}
+</script>
+<script src='js.js'></script>
+<script src='../mtcbase/js/jquery.js'></script>
+<style>
+#kq{
+position:fixed;
+z-index:2;
+background:#162029;
+box-shadow:5px 5px 1px #0A1521;
+left:7.5%;
+top:7.5%;
+width:85%;
+height:85%;
+border-radius:2px;
+display:none;
+overflow:auto;
+padding:0;
+color:#fbfbfb;
+}
+#kqdis{
+
+}
+#display{
+height:500px;
+max-height:75%;
+overflow:hidden;
+transition:0.5s;
+}
+.color{
+margin:2px;
+display:inline-table;
+padding:3px;
+height:4px;
+width:65px;
+border-radius:2px;
+}
+#his{
+background-color:#fbfbfb;
+color:#444;
+padding:6px;
+margin-top:12px;
+bottom:0;
+}
+.clokqbtn{
+float:right;
+color:#fbfbfb;
+padding:6px;
+font-size:24px;
+cursor:pointer;
+}
+canvas{
+transform: rotate(0deg);
+}
+#tool{
+position:fixed;
+right:0;
+left:0;
+bottom:0;
+max-height:100%;
+background:#474747;
+box-shadow:-2px -2px 3px #444;
+font-family:arial;
+color:#fff;
+}
+#toolbtn, #hisbtn, #infobtn{
+display:inline-table;
+float:right;
+cursor:pointer;
+padding:0px 23px 0 23px;
+border-left:solid 1px #cfcfcf;
+}
+.header{
+background:#fbfbfb;
+padding:6px;
+color:#444;
+font-size:18px;
+}
+input[type="phuongtrinh"]{
+width:90%;
+}
+select{
+border:solid 0px #999;
+border-radius:0 0 10px 10px;
+box-shadow:0px 1px 3px #666;
+width:100%;
+background:#eee;
+font-size:18px;
+color:#777;
+padding:8px;
+}
+button{
+margin:3px;
+box-shadow:0px 1px 3px #666;
+border:none;
+font-size:20px;
+color:#777;
+background:#eee;
+padding:8px;
+}
+input{
+font-size:18px;
+padding:5px;
+}
+</style>
+</body>
+</html>

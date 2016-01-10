@@ -1,0 +1,24 @@
+function key(btn){
+	document.getElementById(sessionStorage.keyinput).value=document.getElementById(sessionStorage.keyinput).value+btn;
+}
+function openkey(id){
+	sessionStorage.keyinputold=sessionStorage.keyinput;
+	sessionStorage.keyinput=id;
+	if(sessionStorage.keyinput==sessionStorage.keyinputold||sessionStorage.keyinputold=='undefined'){
+    if(document.getElementById('keyboard').offsetHeight<10){
+			document.getElementById(id).value='';
+	document.getElementById('keyboard').style.height='183px';
+	}else{
+	document.getElementById('keyboard').style.height='0px';
+	}}
+}
+function delkey(){
+	document.getElementById(sessionStorage.keyinput).value=document.getElementById(sessionStorage.keyinput).value.substr(0,(document.getElementById(sessionStorage.keyinput).value.length-1));
+}
+function seepass(id){
+    if(document.getElementById(id).type=='password'){
+	document.getElementById(id).type='text';
+	}else{
+	document.getElementById(id).type='password';
+	}
+}

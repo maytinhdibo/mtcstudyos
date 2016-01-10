@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>summernote</title>
+   <link rel="stylesheet" href="css/index.css" />
+  <!-- Khu vuc ma nguon -->
+  <!-- include jquery -->
+  <script src="src/jquery-1.9.1.min.js"></script> 
+
+  <!-- include libraries BS3 -->
+  <link rel="stylesheet" href="src/bootstrap.min.css" />
+  <script type="text/javascript" src="src/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="src/font-awesome.min.css" />
+
+  <!-- include codemirror (codemirror.css, codemirror.js, xml.js, formatting.js)-->
+  <link rel="stylesheet" type="text/css" href="src/codemirror.min.css" />
+  <link rel="stylesheet" href="src/blackboard.min.css">
+  <link rel="stylesheet" href="src/monokai.min.css">
+  <script type="text/javascript" src="src/codemirror.js"></script>
+  <script src="src/xml.min.js"></script>
+  <script src="src/formatting.min.js"></script>
+  <!-- include summernote -->
+  <link rel="stylesheet" href="src/summernote.css">
+  <script type="text/javascript" src="src/summernote.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+      $('.summernote').summernote({
+        height: 200,
+        tabsize: 2,
+        codemirror: {
+          theme: 'monokai'
+        }
+      });
+    });
+  </script>
+
+</head>
+<body>
+<header id="header">
+<span class="li" id="file">Tài liệu <div class="ul">afdffffffffffffffaa<br>sf</div> </span>
+<span class="li" id="music">Âm thanh <div id="musicul" class="ul">afdffffffffffffffaa<br>sf</div> </span>
+<span class="li" id="more">Nâng cao <div id="moreul" class="ul">afdffffffffffffffaa<br>sf</div></span>
+</header>
+<div id="filetab">
+			<div id="filebutton">
+			<button><a style="color:#9a9a9a" href="add.html">Mở/ Thêm</a></button><br>
+				<button onclick="return save()">Lưu</button><br>
+				<button class="blue" onclick="return savefull()">Tự động lưu cho lần này</button>
+				<br>	<button class="green" data-icon="delete" onclick="return remove()">Xóa toàn bộ</button> 
+				<br>	<button class="red" data-icon="delete" onclick="confirm('Stop! Google mail chưa hỗ trợ dịch vụ trên thiết bị di động.')">Mail ngay </button><br>
+				<button onclick="function(e){document.getElementById('filetab').style.width=0%}">Đóng</button>
+				
+			</div>
+			<div style="color:#cfcfcf;text-align:right">
+				-<b><i>"Lưu"</i></b> dùng để lưu lại những gì bạn đã viết.<br>
+				-<b><i>"Tự động lưu cho lần này"</i></b> với khả năng lưu với tốc độ nhanh mà chỉ cần bấm một lần
+				trong khi soạn thảo Note sẽ tự đông lưu mà không bỏ sót bất kì một từ ngữ nào.
+				<br>	-<b><i>"Mail"</i></b> chức năng chưa thể hỗ trợ trên các thiết bị di động.<br>
+				-<b><i>"Xóa toàn bộ"</i></b> sẽ xóa hoàn toàn thông tin có trong tài liệu này.
+			</div>
+		</div>
+<textarea id="b" data-theme="flatly" height="100%" id="noidung" class="summernote">abc</textarea>
+<script> 
+  document.getElementById('musicul').style.marginLeft=document.getElementById('file').offsetWidth+4+'px'; 
+document.getElementById('moreul').style.marginLeft=document.getElementById('file').offsetWidth+document.getElementById('more').offsetWidth+8+'px'; 
+</script>
+  <script type="text/javascript" src="js/index.js"></script>
+</body>
+</html>

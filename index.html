@@ -1,0 +1,293 @@
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+  
+  <script src="js/jquery.js"></script>
+   <script src="jquery.nicescroll.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="css/normalize.css">
+  <link href='font/index.css' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <link rel="stylesheet" type="text/css" href="css/animate.css">
+  <script src="js/interact-1.2.4.min.js"></script>
+  <title>Mtc studyOS</title>
+</head>
+<body onbeforeonload="document.getElementById('mtc_boot_loader').style.display='block';" onload="return load_end()">
+<script>
+if(localStorage.Minstall!='ok'){
+location.href="view.html";
+}
+</script>
+<center><div id="mtc_boot_loader">
+			<div>
+				<img src="img/loading.gif">
+				</div>	</div></center>
+
+<header>
+<span style="font-size:25px;position:fixed;top:6px;left:4px;">Màn hình chính</span>
+<div id='search'>
+<input placeholder="Nhập nội dung tìm kiếm" onkeypress="opesearch(this.value)" onclick="this.select();" onkeyup="opesearch(this.value)" onkeypress="opesearch(this.value)" onblur="opesearch(this.value)" onsearch="opesearch(this.value)"  id="esearch" type="search">
+<!-- <input type="image" class="button-search" src="img/search.png"/> -->
+</div>
+<span id="clocktop">14:05</span>
+<img onclick="opnof()" id="noficon" src="img/noficon.png">
+</header>
+<div id="esearchbox">
+	<div id="listsearch">
+			<div onclick="esearch('winop','https://www.google.com.vn/search?site=&source=hp&q=')"><img src="img/egoogle.png">Google Search</div>
+			<div onclick="return esearch('','http://coccoc.com/search#query=','Cốc Cốc','img/coccoc.png','#94FF70')"><img src="img/ecoccoc.png">Cốc Cốc</div>
+            <div onclick="return esearch('','http://mp3.zing.vn/tim-kiem/bai-hat.html?q=','Zing mp3','img/emp3.png','rgba(128,51,102,0.9)','#fff')"><img src="img/emp3.ico">Zing mp3</div>
+            <div onclick="return esearch('','https://vi.wikipedia.org/wiki/Special:Search?search=','Wikipedia','img/wiki.ico','rbga(111,111,111,0.8)')"><img src="img/wiki.ico">Wikipedia tiếng Việt</div>
+			<div onclick="return esearch('','http://vanmau.edu.vn/?s=','Văn mẫu','img/vanmau.png','#e54e53')"><img src="img/vanmau.png">Văn mẫu</div>
+	</div>
+	<div id="listsearchhis"></div>
+<div onclick="oplistsearch()" id="searchbox"></div>
+<div onclick="ophissearch()" id="searchhistory"></div>
+</div>
+<div style="height:46px"></div>
+<div id="nof">
+<div onclick="oppw()" id="stt">
+<img id="sttvol" src="img/sttvol.png">
+<img id="sttonl" src="img/sttonl.png">
+</div>
+<h2>Thông báo<span id="countnof"></span></h2>
+<div id="nofdisplay">
+</div>
+<div onclick="removeallnof()" id="noftool">
+Đã nhận tất cả
+</div>
+</div>
+<div  onclick="closedanhiem()" id="danhiembg"></div>
+<div class="healist"><h3>Ứng dụng <a><div style="transition:0.5s;display:inline-table;padding:0px;cursor:pointer;" id="morongapp" onclick="opapplauncher()">></div></a></h3></div>
+<div id="applauncher">
+<br>
+</div>
+<script>document.getElementById('applauncher').innerHTML=localStorage.addApp</script>
+<audio id="nofaudio" src="audio/nof.mp3"></audio>
+<div id="widget">
+<div id="widgetfbfanpage">
+<h3>Nhóm học tập</h3>
+<div onclick="window.open('https://www.facebook.com/groups/mtcstudytoiyeutoanhoc/')">Tôi yêu toán học</div>
+<div onclick="window.open('https://www.facebook.com/groups/mtcstudytoiyeuhoahoc/')">Tôi yêu hóa học</div>
+<div onclick="window.open('https://www.facebook.com/groups/mtcstudytoiyeuvatly/')">Tôi yêu vật lý</div>
+<div onclick="window.open('https://www.facebook.com/groups/mtcstudythuattoanvalaptrinh/')">Thuật toán và lập trình</div>
+<div onclick="window.open('https://www.facebook.com/groups/mtcstudytoiyeulichsu/')">Tôi yêu lịch sử</div>
+<div onclick="window.open('https://www.facebook.com/groups/mtcstudytoiyeudiali/')">Địa lý-một thế giới quanh ta</div>
+<div onclick="window.open('https://www.facebook.com/groups/mtcstudytoiyeuvanhoc/')">Tôi yêu văn học</div>
+<div onclick="window.open('https://www.facebook.com/groups/mtcstudybikiphochay/')">Bí kíp học hay</div>
+
+</div>
+<div  onscroll="scrollclock()" id="widgetapp">
+<div id="clock">14:05</div>
+<img src="img/reload.png" style="position:absolute;top:10px;right:10px;">
+
+<div id="thongtinwidget">
+<div onclick="optt('Totto-Chan Bên Cửa Sổ – Kuroyanagi Tetsuko','http://gocsuyngam.com/sach-hay-totto-chan-ben-cua-so-kuroyanagi-tetsuko/')" class="tt"><h3>[Sách cho ta] Totto-Chan Bên Cửa Sổ – Kuroyanagi Tetsuko</h3><p>Trường Tomoe ngoài đời bị phá hủy năm 1944. Trong xã hội Nhật hiện nay, quan điểm giáo dục của thầy hiệu trưởng Kobayashi – lắng nghe trẻ em bằng tình yêu thương – cũng không còn phổ biến. Mặc dù vậy, cuốn sách…</p></div>
+<div onclick="optt('Ngày 30/6/2015 dài hơn 1 giây so...','http://genk.vn/kham-pha/nam-2015-se-keo-dai-them-1-giay-va-no-co-the-gay-ra-tham-hoa-20150108141036155.chn')" class="tt"><h3>[Khoa học] Ngày 30/6/2015 dài hơn 1 giây so với bình thường và điều đó thật sự nguy hiểm cho Internet</h3><p>Theo tuyên bố của Tổ chức quốc tế về Sự xoay của Trái Đất và Các hệ thống tham chiếu có trụ sở tại Paris, ngày 30 tháng 6 năm 2015 sẽ được thêm vào 1 giây để đồng bộ thời gian trên đồng hồ nguyên tử…</p></div>
+<div class="tt"><h3>[Hệ thống] Bản nâng cấp hiện hữu</h3><p>Cài đặt ngay hệ thống mới để bổ sung những chức năng cần thiết</p></div>
+<div  onclick="optt('Phương pháp học hiệu quả của người Nhật','http://kenh14.vn/hoc-duong/hoc-va-on-thi-hieu-qua-bang-phuong-phap-kaizen-cua-nhat-20140607090125509.chn')" class="tt"><h3>[Học tập] Phương pháp học</h3><p>Hãy thử cách học mà người Nhật đang học. </p></div>
+
+</div>
+</div>
+</div>
+<div id="danhiemleft" onmousemove="danhiemleft()"></div>
+<div id="danhiemleftbox"></div>
+<div id="danhiemright" onmousemove="danhiemright()"></div>
+<div id="danhiemrightbox"></div>
+<div id="danhiem">
+<span style="display:block" id="danhiembox">
+
+</span>
+<span class="danhiemtooldiv">
+<span onclick="closeallapp()" class="danhiemtool">Đóng tất cả</span>
+<span onclick="miniallapp()" class="danhiemtool">Thu nhỏ tất cả</span>
+<span onclick="danhiem()" class="danhiemtool">Trình đa nhiệm</span>
+</span>
+</div>
+<div id="power">
+Âm thanh:
+<input min="0" max="100" id="vol" onchange="volval(this.value)" class="range" type="range"> <span id="volval">0%</span>
+<br><br>
+<div onclick="locknow()">Khoá màn hình</div>
+<div onclick="closepw()">Đóng</div>
+</div>
+
+<div style="display:none;" id="lockbg">
+<div id="locklog">
+<center>
+<div id="lockimgac"></div>
+</center>
+<br>
+<button onclick="notlock()">Bỏ khoá</button>
+</div>
+</div>
+
+
+<div id="nofdistemp"></div>
+ <script src="js/mtcwindow.js"></script>
+  <script src="js/widget.js"></script>
+<script>
+
+ function load_end(){
+document.getElementById('mtc_boot_loader').style.opacity='0';
+setTimeout("document.getElementById('mtc_boot_loader').style.display='none'",750);
+}
+
+clock();
+function clock(){
+d=new Date();
+hour=d.getHours();
+minute=d.getMinutes();
+if(hour<10){hour='0'+hour};
+if(minute<10){minute='0'+minute};
+document.getElementById(localStorage.widgetclock).innerHTML=hour+':'+minute;
+setTimeout('clock()',6000);
+}
+function scrollclock(){
+scroll=document.getElementById('widgetapp').scrollTop;
+if(scroll>18){
+$('#clock').css({
+      "width":document.getElementsByClassName('tt')[0].clientWidth,
+	  "position":"absolute",
+	  "top":scroll,
+    });
+}else{
+document.getElementById('clock').setAttribute('style',''); 
+}
+}
+function esearch(truewin,q,appname,appicon,appcolor,textcolor){
+value=document.getElementById('esearch').value;
+if(truewin=='winop'){
+window.open(q+value);
+}else{
+opapp(appname,q+es2cape(value),appicon,appcolor,textcolor);
+}
+document.getElementById('esearch').value='';
+opesearch('');
+localStorage.hissearch+="<span onclick=reopesearch('"+value+"') >"+value+"</span>";
+}
+function es2cape(value){
+return value.replace(/ /gi, "%20"); 
+}
+function ophissearch(){
+document.getElementById('listsearchhis').style.display="block";
+document.getElementById('listsearch').style.display="none";
+document.getElementById('searchbox').style.border="none";
+document.getElementById('searchhistory').style.borderTop="solid 3px #525";
+document.getElementById('listsearchhis').innerHTML=localStorage.hissearch;
+}
+function oplistsearch(){
+document.getElementById('listsearchhis').setAttribute('style','');
+document.getElementById('listsearch').setAttribute('style','');
+document.getElementById('searchbox').setAttribute('style','');
+document.getElementById('searchhistory').setAttribute('style','');
+}
+function reopesearch(value){
+document.getElementById('esearch').value=value;
+opesearch(value);
+oplistsearch();
+}
+
+function addnof(icon,content){
+if(icon==''){
+icon='img/nof.png';
+}
+localStorage.sysnof+="<div class='divv' onclick='removenof(this)'><img src="+icon+" >"+content+"</div>";
+reloadnof();
+document.getElementById('nofaudio').play();
+if(document.getElementById('nof').clientHeight<1){
+document.getElementById('nofdistemp').innerHTML="<img src="+icon+" >"+content+"</div>"
+document.getElementById('nofdistemp').style.display="block";
+document.getElementById('nofdistemp').className="animated fadeInRight";
+setTimeout(function(){document.getElementById('nofdistemp').className="animated fadeOutRight";
+setTimeout("document.getElementById('nofdistemp').style.display='block'",800);
+},2200);
+}
+}
+function reloadnof(){
+document.getElementById('nofdisplay').innerHTML=localStorage.sysnof;
+checknof();
+}
+document.getElementById('nofaudio').src=localStorage.audionof;
+function a(){
+alert('aa');
+}
+function opapplauncher(){
+if(document.getElementById('applauncher').offsetHeight<150){
+document.getElementById('applauncher').style.height=document.getElementById('applauncher').scrollHeight;
+document.getElementById('morongapp').style.transform="rotate(90deg)";
+a=document.body.clientHeight-(document.getElementById('applauncher').scrollHeight+86);
+if(a<=0){
+a=0;
+document.getElementById('widget').style.top=document.body.clientHeight+'px';
+}else{
+a=document.getElementById('applauncher').scrollHeight+79;
+document.getElementById('widget').style.top=a+'px';
+}
+}else{
+document.getElementById('applauncher').style.height='120px';
+document.getElementById('morongapp').style.transform="rotate(0deg)";
+document.getElementById('widget').setAttribute('style','');
+}
+}
+checknof();
+reloadnof();
+function checknof(){
+if(localStorage.sysnof.match(/divv/g)==null){
+document.getElementById('countnof').innerHTML='0';
+document.getElementById('nofdisplay').innerHTML='<br><h2>Không có thông báo nào gần đây</h2>';
+}else{
+document.getElementById('countnof').innerHTML=localStorage.sysnof.match(/<div/g).length;
+}
+}
+function renewnof(){
+localStorage.sysnof=document.getElementById('nofdisplay').innerHTML;
+checknof();
+}
+function removeallnof(){
+document.getElementById('nofdisplay').className="animated rollOut";
+setTimeout(function(){localStorage.sysnof='';checknof();document.getElementById('nofdisplay').className='';opnof();},600);
+}
+function removenof(element){
+element.className='animated fadeOutRight';
+setTimeout(function(){element.remove();renewnof();},500);
+
+}
+</script>
+
+<div id="musicsub">
+<div width="100%" id="musicsubin"></div>
+</div>
+
+<ul class='custom-menu'>
+  <span onclick="history.go(-1)" class="back"></span>
+  <span onclick="history.go(1)" class="tien"></span>
+  <div style="height:30px"></div>
+  <li onclick="miniallapp()">Hiện màn hình</li>
+  <li onclick="danhiem()">Mở đa nhiệm</li>
+</ul>
+<script language="javascript" type="text/javascript">
+ $(document).ready(function() {  
+        $("#widgetfbfanpage").niceScroll();
+    });
+$(document).bind("contextmenu", function (event) {    
+    // Avoid the real one
+    event.preventDefault();    
+    // Show contextmenu
+    $(".custom-menu").finish().toggle(100).    
+    // In the right position (the mouse)
+    css({
+        top: event.pageY + "px",
+        left: event.pageX + "px"
+    });
+});
+// If the document is clicked somewhere
+$(document).bind("mousedown", function (e) {    
+    // If the clicked element is not the menu
+    if (!$(e.target).parents(".custom-menu").length > 0) {        
+        // Hide it
+        $(".custom-menu").hide(100);
+    }
+});
+
+</script>
+</body>

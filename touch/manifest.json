@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "New Tab Redirect",
+  "short_name": "NTR!",
+  "description": "Allows a user to provide the URL of the page that loads in a new tab.",
+  "version": "3.1.4",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "permissions": ["storage", "chrome://favicon/"],
+  "optional_permissions": ["tabs", "topSites", "management", "bookmarks"],
+  "content_security_policy": "script-src 'self' chrome-extension-resource: ; object-src 'self'",
+  "icons": {
+    "200": "images/icon200.png",
+    "128": "images/icon128.png",
+	"19":"images/icon19.png"
+  },
+  "incognito": "split",
+  "minimum_chrome_version" : "22"
+}

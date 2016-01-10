@@ -1,0 +1,28 @@
+﻿<label class="switch">
+    <input onchange="hieuungchange()" id="hieuung" type="checkbox">
+    <span class="check"></span>
+</label>
+Bật hiệu ứng động
+<p><h5>Sử dụng các hiệu ứng chuyển đổi cho các cửa sổ khi thu nhỏ, đóng, và xuất hiện</h5></p>
+
+<script>
+setTimeout(function(){
+if(localStorage.animatedzoomOutDown=='animated'){
+document.getElementById('hieuung').checked=false;
+}else{
+document.getElementById('hieuung').checked=true;
+}},100);
+
+ 
+function hieuungchange(){
+if(document.getElementById('hieuung').checked==true){
+localStorage.animatedzoomOutDown='animated fadeOutLeft';
+localStorage.animatedzoomOutLeft='animated fadeOutDown';
+localStorage.animatedrollIn='animated fadeInUp';
+}else{
+localStorage.animatedzoomOutDown='animated';
+localStorage.animatedzoomOutLeft='animated';
+localStorage.animatedrollIn='animated';
+}
+}
+</script>

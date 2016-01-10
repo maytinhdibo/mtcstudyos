@@ -1,0 +1,5 @@
+Phương trình cần vẽ đồ thị:
+(VD:(1/999)*x^5-14*x+10)
+</div>
+<br>f(x):<input id="pt" type="phuongtrinh"/>
+<button onclick="runpt(document.getElementById('pt').value)">Vẽ đồ thị</button>

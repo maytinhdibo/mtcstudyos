@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta name="format-detection" content="telephone=no" />
+		<meta name="viewport"/>
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css">
+		<link rel="stylesheet" type="text/css" href="setpage/css/metro.min.css">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,400italic,300italic&subset=latin-ext,vietnamese' rel='stylesheet' type='text/css'>
+		<link href='setpage/css/index.css' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/animate.min.css">
+		<link rel="stylesheet" type="text/css" href="app base/mtcbase/css/index.css" />
+		<title>Hello World</title>
+	</head>
+	<body onload="return appsize()">
+	<style>
+		li{
+		cursor: pointer
+		}
+		</style>
+		<ul id="menu">
+			<li class="select" id="1" title="tk">Tài khoản</li>
+			<li id="2" title="canhanhoa">Cá nhân hóa</li>
+			<li id="3" title="thongbao">Trung tâm thông báo</li>
+			<li id="4" title="cuaso">Trình quản lí cửa sổ</li>
+				<li id="5" title="widget">Ứng dụng con trên màn hình</li>
+			<li id="6" title="gioithieu">Giới thiệu</li>
+		</ul>
+		<div id="frame"></div>
+		<script>
+			function load(id,link){
+				$('#frame').hide().load('setpage/'+link+'.html').fadeIn('fast');
+				$("#menu li").removeClass('select');
+				$("#menu li#"+id).addClass('select');
+			}
+			load(1,'tk');
+			$("#menu li").click(function() {
+				var id = this.id;
+				var link = this.title;
+				load(id,link);
+			});
+		</script>
+	
+			<script src="app base/mtcbase/js/index.js"></script>
+	</body>
+</html>

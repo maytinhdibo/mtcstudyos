@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/animate.css">
+</head>
+<body>
+Chế độ thử nghiệm<br>
+Các bài test:
+<br>
+<button onclick="top.addnof('','Thông báo thử nghiệm')">Tạo thông báo</button><br>
+<button onclick="top.danhiem()">Bật đa nhiệm</button><br>
+<button onclick="des()">Di chuyển chế độ (về dạng desktop)</button>
+<style>
+*{
+padding:0;
+margin:0;
+font-family:arial;
+font-weight:100;
+}
+body{
+background:#eee;
+padding:3px;
+}
+
+button{
+border:none;
+padding:6px;
+margin:2px;
+}
+</style>
+<script>
+function des(){
+if(confirm('Bạn chắc chắn thoát khỏi chế độ Tablet?')){
+if(localStorage.animatedzoomOutDown=='animated fadeOutLeft'){
+localStorage.animatedzoomOutDown='animated zoomOutDown';
+localStorage.animatedzoomOutLeft='animated zoomOutLeft';
+localStorage.animatedrollIn='animated rollIn';
+}
+window.open('../');
+top.document.write('Chế độ đã chuyển về desktop.');
+}
+}
+</script>
+</body>
+</html>

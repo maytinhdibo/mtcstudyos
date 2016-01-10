@@ -1,0 +1,30 @@
+widgetcheckdisplay();
+function widgetcheckdisplay(){
+	if(localStorage.widgetdisplay=="none"){
+document.getElementById('widget').style.display="none";
+document.getElementById('morongapp').style.display="none";
+document.getElementById('applauncher').style.height=document.getElementById('applauncher').scrollHeight;
+top.document.getElementById('clocktop').style.display="block";
+top.document.getElementById('applauncher').style.height=top.document.getElementById('applauncher').scrollHeight;
+top.document.getElementById('morongapp').style.transform="rotate(0deg)";
+}else{
+	document.getElementById('widget').style.display="block";
+document.getElementById('morongapp').style.display="inline-table";
+document.getElementById('widget').style.top='199px';
+}
+}
+
+setTimeout(function(){
+	if(localStorage.widgetdisplay=="none"){
+document.getElementById('widget').style.display="none";
+document.getElementById('morongapp').style.display="none";
+document.getElementById('applauncher').style.height=document.getElementById('applauncher').scrollHeight;
+top.document.getElementById('clocktop').style.display="block";
+top.document.getElementById('applauncher').style.height=top.document.getElementById('applauncher').scrollHeight;
+top.document.getElementById('morongapp').style.transform="rotate(0deg)";
+}else{
+	document.getElementById('widget').style.display="block";
+document.getElementById('morongapp').style.display="inline-table";
+document.getElementById('widget').style.top='199px';
+}
+},100);

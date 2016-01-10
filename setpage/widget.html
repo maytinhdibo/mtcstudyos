@@ -1,0 +1,63 @@
+﻿<label class="switch">
+    <input onchange="widgetchange()" id="widgetcheck" type="checkbox">
+    <span class="check"></span>
+</label>
+Hiển thị Widget trên màn hình chính
+<p><h5>Các ứng dụng và tin tức hiển thị phía dưới vùng app</h5></p>
+Lĩnh vực quan tâm nhất:<br><br>
+<select>
+<option>Khoa học tự nhiên</option>
+<option>Khoa học xã hội</option>
+</select>
+<p><h5>Việc lựa chọn để sắp xếp các chủ đề thông tin được hiển thị trên widget và một số ứng dụng khác</h5></p>
+<label class="switch">
+    <input onchange="submusicchange()" id="submusiccheck" type="checkbox">
+    <span class="check"></span>
+</label>
+Hiển thị lời bài hát trong phần mềm học tiếng Anh 
+<p><h5>Hiển thị lời bài hát mọi nơi trên màn hình</h5></p>
+<script>
+if(localStorage.widgetdisplay=='none'){
+document.getElementById('widgetcheck').checked=false;
+}else{
+document.getElementById('widgetcheck').checked=true;
+}
+
+if(localStorage.sub=='none'){
+document.getElementById('submusiccheck').checked=false;
+}else{
+document.getElementById('submusiccheck').checked=true;
+} 
+
+function submusicchange(){
+if(document.getElementById('submusiccheck').checked==true){
+top.document.getElementById('musicsub').style.display="block";
+localStorage.sub='block';
+sessionStorage.sub='block';
+}else{
+top.document.getElementById('musicsub').style.display="none";
+localStorage.sub='none';
+}
+}
+
+function widgetchange(){
+top.widgetcheckdisplay();
+if(document.getElementById('widgetcheck').checked==true){
+localStorage.widgetdisplay="block";
+top.document.getElementById('widget').style.display="block";
+top.document.getElementById('morongapp').style.display="inline-table";
+top.document.getElementById('applauncher').style.height='120px';
+localStorage.widgetclock="clock";
+top.document.getElementById('clocktop').style.display="none";
+}else{
+localStorage.widgetdisplay="none";
+top.document.getElementById('widget').style.display="none";
+top.document.getElementById('morongapp').style.display="none";
+top.document.getElementById('clocktop').style.display="block";
+top.document.getElementById('applauncher').style.height=top.document.getElementById('applauncher').scrollHeight;
+localStorage.widgetclock="clocktop";
+}
+top.clock();
+}
+
+</script>

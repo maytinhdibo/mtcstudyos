@@ -1,0 +1,135 @@
+<html>
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<link rel="stylesheet" type="text/css" href="css/index.css" />
+<link rel="stylesheet" type="text/css" href="app base/mtcbase/css/index.css" />
+        <link rel="stylesheet" href="css/animate.min.css">
+	<title>Hello World</title>
+  </head>
+  <body>
+	  <header  style="position:static;" id="header" style="color:#1a1a1a;">
+		<span>
+		  <h1 style="text-align:left;" class="wow lightSpeedIn" style="padding:5px;"><img src="img/back.png" height="50px" width="50px" onclick="history.go(-1)"/>
+			cửa hàng</h1></span></header>
+	<div id="main">		<div class="wow rotateIn">
+			  <img src="img/tinhte.png">
+			  <span>Tinh tế</span>
+			  <button onclick="return install('tinhte')" class="install">Cài đặt</button>
+			  <button onclick="return uninstall('tinhte')" class="uninstall">Gỡ bỏ</button>
+			</div>
+                                <div class="wow rotateIn">                           
+			  <img src="img/dantri.png">
+			  <span>Dân trí</span>
+			  <button onclick="return install('dantri')" class="install">Cài đặt</button>
+			  <button onclick="return uninstall('dantri')" class="uninstall">Gỡ bỏ</button>
+			</div>                    
+                             <div class="wow rotateIn">                           
+			  <img src="img/zingme.png">
+			  <span>Zing me</span>
+			  <button onclick="return install('zingme')" class="install">Cài đặt</button>
+			  <button onclick="return uninstall('zingme')" class="uninstall">Gỡ bỏ</button>
+			</div>
+                           <div class="wow rotateIn">                           
+			  <img src="img/twitter.png">
+			  <span>Twitter</span>
+			  <button onclick="return install('twitter')" class="install">Cài đặt</button>
+			  <button onclick="return uninstall('twitter')" class="uninstall">Gỡ bỏ</button>
+			</div>  
+                            <div class="wow rotateIn">
+			  <img src="img/outlook.jpg">
+			  <span>Outlook</span>
+			  <button onclick="return install('outlook')" class="install">Cài đặt</button>
+			  <button onclick="return uninstall('outlook')" class="uninstall">Gỡ bỏ</button>
+			</div> 
+                           <div class="wow rotateIn">                           
+			  <img src="img/gdive.png">
+			  <span>Google Drive</span>
+			  <button onclick="return install('gdrive')" class="install">Cài đặt</button>
+			  <button onclick="return uninstall('gdrive')" class="uninstall">Gỡ bỏ</button>
+			</div>
+<div class="wow rotateIn">                           
+			  <img src="img/gmail.png">
+			  <span>Gmail</span>
+			  <button onclick="return install('gmail')" class="install">Cài đặt</button>
+			  <button onclick="return uninstall('gmail')" class="uninstall">Gỡ bỏ</button>
+			</div>
+<div class="wow rotateIn">                           
+			  <img src="img/zingmp3.png">
+			  <span>Zing mp3</span>
+			  <button onclick="return install('zingmp3')" class="install">Cài đặt</button>
+			  <button onclick="return uninstall('zingmp3')" class="uninstall">Gỡ bỏ</button>
+			</div>
+<div class="wow rotateIn">                           
+			  <img src="img/soundcloud.png">
+			  <span>Soundcloud</span>
+			  <button onclick="return install('soundcloud')" class="install">Cài đặt</button>
+			  <button onclick="return uninstall('soundcloud')" class="uninstall">Gỡ bỏ</button>
+			</div>
+<div class="wow rotateIn">                           
+			  <img src="img/wiki.png">
+			  <span>Wikipedia</span>
+			  <button onclick="return install('wiki')" class="install">Cài đặt</button>
+			  <button onclick="return uninstall('wiki')" class="uninstall">Gỡ bỏ</button>
+			</div>
+</div>
+</div>
+			<style id="style">
+			  </style>
+<script>
+  document.getElementById('header').style.borderTopColor=localStorage.oneColor;
+  document.getElementById('style').innerHTML="#main div{background:"+localStorage.oneColor+";}";
+function install(idapp){
+if(localStorage.getItem(idapp)!=null){
+alert('Ứng dụng này đã được cài trước đây.');
+}else{
+localStorage.setItem(idapp,1);
+alert('Ứng dụng được cài đặt hoàn tất!');
+}
+}
+function uninstall(idapp){
+if(localStorage.getItem(idapp)==null){
+alert('Ứng dụng này chưa được cài đặt.');
+}else{
+localStorage.removeItem(idapp);
+alert('Ứng dụng được gỡ hoàn tất!');
+}
+}
+</script>
+			<style>
+			  #main div{
+			  width:45%;
+			  
+                          display:inline-table;
+			  margin:0.2%;
+			  color:#fbfbfb;
+			  padding:4px;
+			  font-size:18px;
+			  }
+			  div img{
+			  height:80px;
+			  width:80px;
+			  }
+			  div span{
+			  position:absolute;
+			  right:2px;
+			  padding:6px;
+			  }
+			  div button{
+			  padding:4px;			  
+			  border:none;
+			  color:#cfcfcf;
+			  }
+			  .install{
+			  background:#265A27;
+			  }
+			  .uninstall{
+			  background:#6B1A11;
+			  }
+			  </style>
+	   <script src="js/wow.min.js"></script>
+<script src="app base/mtcbase/js/index.js"></script>
+     <script>
+        new WOW().init();
+         </script>
+  </body></html>

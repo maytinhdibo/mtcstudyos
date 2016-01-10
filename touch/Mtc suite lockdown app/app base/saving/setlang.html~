@@ -1,0 +1,32 @@
+
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <title>Hello World</title>
+    </head>
+    <body>
+		<h1>
+		<marquee behavior="slide" scrollamount="130" >Language/Ngôn ngữ</marquee>
+		</h1>
+		<center>	
+			<div style="margin-top:10%;height:50%">	
+		<h2>Lựa chọn/Select</h2>
+		<h3>
+				<a href="#" onclick="localStorage.setItem('lang', 'vi');">Tiếng Việt(vi)</a><a>|</a>
+			<a href="#" onclick="localStorage.setItem('lang', 'en');">English(en)</a>
+		<br><br><br>
+		<a href="index.html">	<button style="float:right">Next/Tiếp</button>
+		</a>
+	</h3>
+		</div>
+		<footer>
+			<h5>
+			 v1.0<br>
+			© Mtc,2014
+			</h5>
+		</footer>
+		</center>
+        <script type="text/javascript" src="js/index.js"></script>
+    </body>
+</html>
